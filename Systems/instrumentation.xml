@@ -63,7 +63,7 @@ file, these values will be used (they are hardcoded).
   </marker-beacon>
 
   <heading-indicator-DG>
-    <name>heading-indicator-DG</name>
+    <name>heading-indicator-dg</name>
     <number>0</number>
   </heading-indicator-DG>
 
