@@ -62,10 +62,10 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </marker-beacon>
 
-  <heading-indicator-DG>
+  <heading-indicator-dg>
     <name>heading-indicator-dg</name>
     <number>0</number>
-  </heading-indicator-DG>
+  </heading-indicator-dg>
 
   <magnetic-compass>
     <name>magnetic-compass</name>

@@ -96,7 +96,7 @@
 		<type>rotate</type>
 		<object-name>Face-t</object-name>
 		<object-name>Needle1-t</object-name>
-		<property>instrumentation/heading-indicator-DG/indicated-heading-deg</property>
+		<property>instrumentation/heading-indicator-dg/indicated-heading-deg</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
