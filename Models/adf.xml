@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!-- TACAN brg and range instrument-->
+<PropertyList>
+	<path>adf.ac</path> 
+
+	<animation>
+		<type>rotate</type>
+		<object-name>adf-Needle1</object-name>
+		<property>instrumentation/tacan/indicated-bearing-true-deg</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>90</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>180</ind>
+				<dep>180</dep>
+			</entry>
+			<entry>
+				<ind>270</ind>
+				<dep>270</dep>
+			</entry>
+			<entry>
+				<ind>360</ind>
+				<dep>360</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- Digits -->
+	<animation>
+		<type>textranslate</type>
+		<object-name>adf-digit</object-name>
+		<property>instrumentation/tacan/indicated-distance-nm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>adf-digit-tens</object-name>
+		<property>instrumentation/tacan/indicated-distance-nm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<scroll>1</scroll>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>flag</object-name>
+		<condition>
+			<not>
+				<property>instrumentation/tacan/in-range</property>
+			</not>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD for the whole model *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>
