@@ -454,9 +454,9 @@ n1 100% Note: auto-throttle acts on port engine only -->
 							length="3.0" 
 							down-angle="90"
 							up-angle="0"
-							holdback-x="-9.8"
+							holdback-x="-10.077"
 							holdback-y="0.0"
-							holdback-z="-0.69"
+							holdback-z="-0.75"
 							holdback-length="1.5">
 		<control-input axis="/controls/gear/launchbar"
 									 control="LEXTEND"/>
