@@ -598,6 +598,16 @@
 			<z-m>0.95</z-m>
 		</offsets>
 	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/strop.xml</path>
+		<name>New-Strop</name>
+		<offsets>
+			<x-m>6.154</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.490</z-m>
+		</offsets>
+	</model>
 
 	<!-- ***** Navigation Lights ****** -->
 
@@ -3197,6 +3207,21 @@
 		</axis>
 	</animation>
 
+	<animation>
+		<type>rotate</type>
+		<object-name>aileron-port</object-name>
+		<property>gear/canopy/position-norm</property>
+		<factor>-120</factor>
+		<axis>
+			<x1-m>7.59</x1-m>
+			<y1-m>-3.17</y1-m>
+			<z1-m>0.21</z1-m>
+			<x2-m>8.41</x2-m>
+			<y2-m>-3.20</y2-m>
+			<z2-m>0.20</z2-m>
+		</axis>
+	</animation>
+
 	<!-- Right Wing -->
 	<animation>
 		<type>rotate</type>
@@ -3217,6 +3242,21 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>flap-outer-stbd</object-name>
+		<property>gear/canopy/position-norm</property>
+		<factor>120</factor>
+		<axis>
+			<x1-m>7.59</x1-m>
+			<y1-m>3.17</y1-m>
+			<z1-m>0.21</z1-m>
+			<x2-m>8.41</x2-m>
+			<y2-m>3.20</y2-m>
+			<z2-m>0.20</z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>aileron-stbd</object-name>
 		<property>gear/canopy/position-norm</property>
 		<factor>120</factor>
 		<axis>
@@ -3289,6 +3329,48 @@
 			<y>1</y>
 			<z>0</z>
 		</axis>
+	</animation>
+
+	<!-- lower/raise holdback -->
+	<animation>
+		<type>rotate</type>
+		<object-name>Holdback</object-name>
+		<property>gear/launchbar/holdback-position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>45</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>10.077</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.750</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Holdback</object-name>
+		<condition>
+			<equals>
+				<property>gear/launchbar/state</property>
+				<value>Engaged</value>
+			</equals>
+		</condition>
 	</animation>
 
 	<!-- **************** rocket packs *************** -->
