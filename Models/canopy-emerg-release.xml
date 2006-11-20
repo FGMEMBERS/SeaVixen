@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- wrapper for canopy emergency release -->
+<PropertyList>
+
+	<path>canopy-emerg-release.ac</path>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

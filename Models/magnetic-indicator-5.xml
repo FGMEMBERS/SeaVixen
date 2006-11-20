@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!-- wrapper for magnetic indicator -->
+<PropertyList>
+
+	<path>magnetic-indicator.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>disk-off</object-name>
+		<condition>
+			<not>
+				<property>consumables/fuel/tank[10]/transfering</property>
+			</not>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>disk-on</object-name>
+		<condition>
+			<property>consumables/fuel/tank[10]/transfering</property>
+		</condition>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>
