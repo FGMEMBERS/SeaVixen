@@ -6,9 +6,9 @@ MATERIAL "ac3dmat4" rgb 1 0.466667 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  s
 MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat12" rgb 0.102 0.102 0.102  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.4 0.4 0.4  shi 10  trans 0
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.906 0.906 0.906  shi 128  trans 0.906
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 100  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 1 1 1  shi 100  trans 0
 OBJECT world
-kids 67
+kids 66
 OBJECT group
 name "Holdback"
 loc 2.6383 -0.479094 0.000638351
@@ -111746,10 +111746,6 @@ kids 0
 OBJECT group
 name "fuselage"
 loc 5.59119 0.411348 0.0688866
-kids 0
-OBJECT light
-name "light"
-loc 12.848 1.28929 1.53692
 kids 0
 OBJECT poly
 name "intake-ramp"

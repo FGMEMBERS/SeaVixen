@@ -31,17 +31,17 @@
 		<path>Aircraft/SeaVixen/Panels/upper-panel-hotspots.xml</path>
 		<bottom-left>
 			<x-m>3.05</x-m>
-			<y-m>-0.595</y-m>
+			<y-m>-0.57</y-m>
 			<z-m> 0.7</z-m>
 		</bottom-left>
 		<bottom-right>
 			<x-m>3.05</x-m>
-			<y-m>-0.05</y-m>
+			<y-m>-0.050</y-m>
 			<z-m> 0.7</z-m>
 		</bottom-right>
 		<top-left>
 			<x-m>3.05</x-m>
-			<y-m>-0.595</y-m>
+			<y-m>-0.57</y-m>
 			<z-m> 0.873</z-m>
 		</top-left>
 	</panel>
@@ -477,17 +477,173 @@
 		</offsets>
 	</model>
 
-	<!-- **************** Left Panel *********** -->
+	<!-- **************** Left Top. Panel *********** -->
+	
+	<!-- **************** lamp holders ********** -->
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.06</x-m>
+			<y-m>-0.300</y-m>
+			<z-m>0.690</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.06</x-m>
+			<y-m>-0.400</y-m>
+			<z-m>0.720</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/dolls-eye-mg-hyd-pump.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.527</y-m>
+			<z-m>0.755</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/dolls-eye-fuel-filter.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.2979</y-m>
+			<z-m>0.7098</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/canopy.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.563</y-m>
+			<z-m>0.72</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/refuel.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.402</y-m>
+			<z-m>0.6822</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/canopy-emerg-release.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.534</y-m>
+			<z-m>0.699</z-m>
+			<roll-deg>-45</roll-deg>
+		</offsets>
+	</model>
+
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-filter-de-ice-hydraulic.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.2741</y-m>
+			<z-m>0.6980</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-filter-de-ice-methanol.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.2465</y-m>
+			<z-m>0.6980</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-aar.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.4464</y-m>
+			<z-m>0.6825</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-5.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3781</y-m>
+			<z-m>0.7131</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-6.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3753</y-m>
+			<z-m>0.6843</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-3.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3511</y-m>
+			<z-m>0.7131</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-4.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3483</y-m>
+			<z-m>0.6843</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-1.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3241</y-m>
+			<z-m>0.7131</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-2.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3213</y-m>
+			<z-m>0.6843</z-m>
+		</offsets>
+	</model>
 
 	<!-- **************** Right Top Panel***************** -->
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/warning-lamp-alt.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.200</y-m>
+			<z-m>0.87</z-m>
+		</offsets>
+	</model>
 
 	<model>
 		<path>Aircraft/SeaVixen/Models/autopilot-control.xml</path>
 		<name>Autopilot Control</name>
 		<offsets>
 			<x-m>3.05</x-m>
-			<y-m>-0.32</y-m>
-			<z-m>0.715</z-m>
+			<y-m>-0.310</y-m>
+			<z-m>0.717</z-m>
 		</offsets>
 	</model>
 
