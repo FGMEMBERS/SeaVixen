@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!-- wrapper for dolls eye magnetic indicator -->
+<PropertyList>
+
+	<path>dolls-eye.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>black-disk</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/suppliers/inverter-type-103A-main</property>
+				<value>50</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>white-disk</object-name>
+		<condition>
+			<less-than>
+				<property>systems/electrical/suppliers/inverter-type-103A-main</property>
+				<value>50</value>
+			</less-than>
+		</condition>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

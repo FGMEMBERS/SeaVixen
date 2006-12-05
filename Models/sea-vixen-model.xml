@@ -449,6 +449,14 @@
 	</model>-->
 
 	<!-- **************** Right Panel *********** -->
+	<model>
+		<path>Aircraft/SeaVixen/Models/dolls-eye-inverter-fail.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.0464</y-m>
+			<z-m>0.6055</z-m>
+		</offsets>
+	</model>
 
 	<model>
 		<path>Aircraft/SeaVixen/Models/jpt-1.xml</path>
@@ -3363,7 +3371,7 @@
 		</axis>
 	</animation>
 
-	<animation>
+	<!--<animation>
 		<type>rotate</type>
 		<object-name>aileron-port</object-name>
 		<property>gear/canopy/position-norm</property>
@@ -3376,7 +3384,7 @@
 			<y2-m>-3.20</y2-m>
 			<z2-m>0.20</z2-m>
 		</axis>
-	</animation>
+	</animation>-->
 
 	<!-- Right Wing -->
 	<animation>
@@ -3410,7 +3418,7 @@
 		</axis>
 	</animation>
 
-	<animation>
+	<!--<animation>
 		<type>rotate</type>
 		<object-name>aileron-stbd</object-name>
 		<property>gear/canopy/position-norm</property>
@@ -3423,7 +3431,7 @@
 			<y2-m>3.20</y2-m>
 			<z2-m>0.20</z2-m>
 		</axis>
-	</animation>
+	</animation>-->
 
 	<!-- ************************ arrestor hook ********************** -->
 	<!-- lower/raise -->
