@@ -95,6 +95,12 @@ raise/lower, emergency flap lowering, and 2 flap steps.
 													 type="double">7.5</target-z-offset-m>
 			</config>
 		</view>
+		<view n="6">
+			<config>
+				<target-z-offset-m archive="y"
+													 type="double">7.5</target-z-offset-m>
+			</config>
+		</view>
 		<flaps>
 			<setting>0.00</setting>
 			<setting>0.5</setting>
