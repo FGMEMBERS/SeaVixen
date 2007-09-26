@@ -90,14 +90,14 @@ init_electrical = func {
 # generators ("name", "rpm source", "control property", initial switch position, rated voltage
 #, rated curent (amps), rpm_threshold )
 
-	generator_port = Generator.new("generator",
+	generator_port = Generator.new("generator port",
 					"engines/engine[0]/n1",
 					"controls/electric/engine/generator",
 					1,
 					28.0,
 					320.0,
 					58);
-	generator_stbd = Generator.new("generator[1]",
+	generator_stbd = Generator.new("generator stbd",
 					"engines/engine[1]/n1",
 					"controls/electric/engine[1]/generator",
 					1,
@@ -342,6 +342,18 @@ init_electrical = func {
 					,
 					"28VDC",
 					0.5);
+	com1 = Output.new("com1",
+					,
+					,
+					"28VDC",
+					19.6);
+	com2 = Output.new("com2",
+					,
+					,
+					"28VDC",
+					19.6);
+					
+					
 
 # 115VAC 1 Phase outputs
 
@@ -351,8 +363,8 @@ init_electrical = func {
 					"115VAC-1phase",
 					0);	
 	transponder = Output.new	("transponder",
-					,
-					,
+					"controls/electric/transponder",
+					0,
 					"115VAC-1phase",
 					0);
 					
@@ -408,6 +420,16 @@ init_electrical = func {
 					,
 					"28VDC-Emergency",
 					0.5);
+ 	com1 = Output.new("com1-emergency",
+					,
+					,
+					"28VDC-Emergency",
+					19.6);
+	com2 = Output.new("com2-emergency",
+					,
+					,
+					"28VDC-Emergency",
+					19.6);
 
 # 115AC-3phase - emergency outputs
 
@@ -556,6 +578,7 @@ Generator = {
 		var obj = { parents : [ Generator ] };
 		obj.name = name;
 		obj.rpm_source = props.globals.getNode( source, 1 );
+		obj.rpm_source.setDoubleValue(0);
 		obj.control = props.globals.getNode( control, 1 );
 		obj.control.setBoolValue( switch );
 		obj.rated_volts = volts;
