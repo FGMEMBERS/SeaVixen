@@ -90,14 +90,14 @@ init_electrical = func {
 # generators ("name", "rpm source", "control property", initial switch position, rated voltage
 #, rated curent (amps), rpm_threshold )
 
-	generator_port = Generator.new("generator port",
+	generator_port = Generator.new("generator_port",
 					"engines/engine[0]/n1",
 					"controls/electric/engine/generator",
 					1,
 					28.0,
 					320.0,
 					58);
-	generator_stbd = Generator.new("generator stbd",
+	generator_stbd = Generator.new("generator_stbd",
 					"engines/engine[1]/n1",
 					"controls/electric/engine[1]/generator",
 					1,
@@ -172,77 +172,77 @@ init_electrical = func {
 					1,
 					"28VDC",
 					29);
-	boost_pump_1_stbd = Output.new	("boost-pump[1]",
+	boost_pump_1_stbd = Output.new	("boost-pump-1",
 					"controls/fuel/tank[1]/boost-pump",
 					1,
 					"28VDC",
 					29);
-	boost_pump_2_port = Output.new	("boost-pump[2]",
+	boost_pump_2_port = Output.new	("boost-pump-2",
 					"controls/fuel/tank[4]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_2_stbd = Output.new	("boost-pump[3]",
+	boost_pump_2_stbd = Output.new	("boost-pump-3",
 					"controls/fuel/tank[5]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_3_port = Output.new	("boost-pump[4]",
+	boost_pump_3_port = Output.new	("boost-pump-4",
 					"controls/fuel/tank[6]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_3_stbd = Output.new	("boost-pump[5]",
+	boost_pump_3_stbd = Output.new	("boost-pump-5",
 					"controls/fuel/tank[7]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_4_port = Output.new	("boost-pump[6]",
+	boost_pump_4_port = Output.new	("boost-pump-6",
 					"controls/fuel/tank[8]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_4_stbd = Output.new	("boost-pump[7]",
+	boost_pump_4_stbd = Output.new	("boost-pump-7",
 					"controls/fuel/tank[9]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_pin_port = Output.new("boost-pump[8]",
+	boost_pump_pin_port = Output.new("boost-pump-8",
 					"controls/fuel/tank[10]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	boost_pump_pin_stbd = Output.new("boost-pump[9]",
+	boost_pump_pin_stbd = Output.new("boost-pump-9",
 					"controls/fuel/tank[11]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	auxiliary_pump_2_port = Output.new("auxiliary-pump[2]",
+	auxiliary_pump_2_port = Output.new("auxiliary-pump-2",
 					"controls/fuel/tank[4]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	auxiliary_pump_2_stbd = Output.new("auxiliary-pump[3]",
+	auxiliary_pump_2_stbd = Output.new("auxiliary-pump-3",
 					"controls/fuel/tank[5]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	auxiliary_pump_3_port = Output.new("auxiliary-pump[4]",
+	auxiliary_pump_3_port = Output.new("auxiliary-pump-4",
 					"controls/fuel/tank[6]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	auxiliary_pump_3_stbd = Output.new("auxiliary-pump[5]",
+	auxiliary_pump_3_stbd = Output.new("auxiliary-pump-5",
 					"controls/fuel/tank[7]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	auxiliary_pump_4_port = Output.new("auxiliary-pump[6]",
+	auxiliary_pump_4_port = Output.new("auxiliary-pump-6",
 					"controls/fuel/tank[8]/boost-pump",
 					0,
 					"28VDC",
 					17);
-	auxiliary_pump_4_stbd = Output.new("auxiliary-pump[7]",
+	auxiliary_pump_4_stbd = Output.new("auxiliary-pump-7",
 					"controls/fuel/tank[9]/boost-pump",
 					0,
 					"28VDC",
@@ -262,7 +262,7 @@ init_electrical = func {
 					0,
 					"28VDC",
 					7.5);	
-	pitot_heater_stbd = Output.new	("pitot-heater[1]",
+	pitot_heater_stbd = Output.new	("pitot-heater-1",
 					"controls/anti-ice/pitot-heat[1]",
 					0,
 					"28VDC",
@@ -307,7 +307,7 @@ init_electrical = func {
 					,
 					"28VDC",
 					1.75);
-	nav_1 = Output.new		("nav[1]",
+	nav_1 = Output.new		("nav-1",
 					,
 					,
 					"28VDC",
@@ -375,37 +375,37 @@ init_electrical = func {
 					1,
 					"28VDC-Emergency",
 					17);
-	boost_pump_3_stbd_mg = Output.new("boost-pump-emergency[1]",
+	boost_pump_3_stbd_mg = Output.new("boost-pump-emergency-1",
 					"controls/fuel/tank[7]/boost-pump",
 					1,
 					"28VDC-Emergency",
 					17);
-	auxiliary_pump_2_port_mg = Output.new("auxiliary-pump-emergency[1]",
+	auxiliary_pump_2_port_mg = Output.new("auxiliary-pump-emergency-1",
 					"controls/fuel/tank[4]/boost-pump[1]",
 					0,
 					"28VDC",
 					3.5);
-	auxiliary_pump_2_stbd_mg = Output.new("auxiliary-pump-emergency[2]",
+	auxiliary_pump_2_stbd_mg = Output.new("auxiliary-pump-emergency-2",
 					"controls/fuel/tank[5]/boost-pump[1]",
 					0,
 					"28VDC-Emergency",
 					3.5);
-	auxiliary_pump_3_port_mg = Output.new("auxiliary-pump-emergency[3]",
+	auxiliary_pump_3_port_mg = Output.new("auxiliary-pump-emergency-3",
 					"controls/fuel/tank[6]/boost-pump[1]",
 					0,
 					"28VDC-Emergency",
 					3.5);
-	auxiliary_pump_3_stbd_mg = Output.new("auxiliary-pump-emergency[4]",
+	auxiliary_pump_3_stbd_mg = Output.new("auxiliary-pump-emergency-4",
 					"controls/fuel/tank[7]/boost-pump[1]",
 					0,
 					"28VDC-Emergency",
 					3.5);
-	auxiliary_pump_4_port_mg = Output.new("auxiliary-pump-emergency[5]",
+	auxiliary_pump_4_port_mg = Output.new("auxiliary-pump-emergency-5",
 					"controls/fuel/tank[8]/boost-pump[1]",
 					0,
 					"28VDC-Emergency",
 					3.5);
-	auxiliary_pump_4_stbd_mg = Output.new("auxiliary-pump-emergency[6]",
+	auxiliary_pump_4_stbd_mg = Output.new("auxiliary-pump-emergency-6",
 					"controls/fuel/tank[9]/boost-pump[1]",
 					0,
 					"28VDC-Emergency",
@@ -577,6 +577,7 @@ Generator = {
 	 new : func(name, source, control, switch, volts, amps, threshold) {
 		var obj = { parents : [ Generator ] };
 		obj.name = name;
+		print ("name ", name);
 		obj.rpm_source = props.globals.getNode( source, 1 );
 		obj.rpm_source.setDoubleValue(0);
 		obj.control = props.globals.getNode( control, 1 );
