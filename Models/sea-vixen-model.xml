@@ -3,7 +3,7 @@
 <!-- started Vivian Meazza 2006/7/1 vivian.meazza@lineone.net -->
 <!-- Ver 0.1.0-->
 <PropertyList>
-	<path>sea-vixen-FAW2-ver1.ac</path>
+	<path>sea-vixen-FAW2-ver5.ac</path>
 
 	<!-- ***************** Cockpit *************************** -->
 	<!-- Front hotspots -->
@@ -737,23 +737,23 @@
 		<path>Aircraft/SeaVixen/Models/ejection-seat.xml</path>
 		<name>Pilot Seat</name>
 		<offsets>
-			<x-m>3.72</x-m>
+			<x-m>3.65</x-m>
 			<y-m>-0.33</y-m>
 			<z-m>-0.08</z-m>
 		</offsets>
 	</model>
 
-	<model>
+	<!--<model>
 		<path>Aircraft/SeaVixen/Models/ejection-seat.xml</path>
 		<name>Observer Seat</name>
 		<offsets>
-			<x-m>4.160</x-m>
+			<x-m>4.125</x-m>
 			<y-m>0.388</y-m>
-			<z-m>-0.701</z-m>
+			<z-m>-0.625</z-m>
 		</offsets>
-	</model>
+	</model>-->
 
-  <model>
+  <!--<model>
 		<path>Aircraft/SeaVixen/Models/blackout.xml</path>
 		<name>Blackout</name>
 		<offsets>
@@ -761,7 +761,7 @@
 			<y-m>-0.324</y-m>
 			<z-m>0.95</z-m>
 		</offsets>
-	</model>
+	</model>-->
 	
 	<model>
 		<path>Aircraft/SeaVixen/Models/strop.xml</path>
@@ -900,7 +900,8 @@
 		<object-name>Tail-Cone</object-name>-->
 		<object-name>Pilot Seat</object-name>
 		<object-name>canopy</object-name>
-		<object-name>Blackout</object-name>
+    <object-name>hatch</object-name>
+		<!--<object-name>Blackout</object-name>-->
 		<condition>
 			<greater-than-equals>
 				<property>sim/current-view/view-number</property>
@@ -926,7 +927,7 @@
 	<!-- **************************** Pilot ******************************* -->
 	<!--  conceal Pilot Head etc in Cockpit View -->
 
-	<!--<animation>
+	<animation>
 		<type>select</type>
 		<object-name>Pilot-Head</object-name>
 		<object-name>Helmet</object-name>
@@ -942,7 +943,7 @@
 			</not>
 		</condition>
 	</animation>
--->
+
 	<!-- Right arm -->
 	<!-- Roll -->
 
@@ -3329,14 +3330,75 @@
 	<animation>
 		<type>translate</type>
 		<object-name>main</object-name>
+    <object-name>frame-main</object-name>
 		<property>gear/canopy/position-norm</property>
-		<factor>0.8</factor>
+		<!--<factor>0.8</factor>-->
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>0.4</ind>
+        <dep>0.4</dep>
+      </entry>
+      <entry>
+        <ind>0.8</ind>
+        <dep>0.8</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>0.8</dep>
+      </entry>
+    </interpolation>
 		<axis>
 			<x>1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>hatch</object-name>
+    <property>gear/canopy/position-norm</property>
+    <!--4.6323	0.776321	-0.175634
+    4.6323	0.70263-->
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0</dep>
+      </entry>
+      <entry>
+        <ind>0.01</ind>
+        <dep>5</dep>
+      </entry>
+      <entry>
+        <ind>0.15</ind>
+        <dep>5</dep>
+      </entry>
+      <entry>
+        <ind>0.45</ind>
+        <dep>35</dep>
+      </entry>
+      <entry>
+        <ind>0.75</ind>
+        <dep>75</dep>
+      </entry>
+      <entry>
+        <ind>1.0</ind>
+        <dep>75</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x1-m>4.6323</x1-m>
+      <y1-m>0.175634</y1-m>
+      <z1-m>0.776321</z1-m>
+      <x2-m>4.6323</x2-m>
+      <y2-m>0.488823</y2-m>
+      <z2-m>0.70263</z2-m>
+    </axis>
+  </animation>
 
 	<!-- Left Wing -->
 	<animation>
