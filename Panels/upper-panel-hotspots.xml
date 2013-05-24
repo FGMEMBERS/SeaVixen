@@ -46,7 +46,7 @@
 				<!-- ************** autopilot hotspots ************** -->
 
 				<!-- autostab rudder switch -->
-				<action>
+				<!--<action>
 					<name>autostab rudder up</name>
 					<button>0</button>
 					<x>190</x>
@@ -71,9 +71,9 @@
 						<property>controls/switches/auto-stabs/yaw_channel</property>
 						<value type="bool">0</value>
 					</binding>
-				</action>
+				</action>-->
 				<!-- autostab elevon switch -->
-				<action>
+				<!--<action>
 					<name>autostab elevon up</name>
 					<button>0</button>
 					<x>240</x>
@@ -98,8 +98,8 @@
 						<property>controls/switches/auto-stabs/pitch_channel</property>
 						<value type="bool">0</value>
 					</binding>
-				</action>
-				<action>
+				</action>-->
+				<!--<action>
 					<name>autopilot heading hold on</name>
 					<button>0</button>
 					<x>215</x>
@@ -111,7 +111,7 @@
 						<property>controls/switches/autopilot/heading_channel</property>
 						<value type="int">1</value>
 					</binding>
-				</action>
+				</action>-->
 				<action>
 					<name>autopilot height hold off</name>
 					<button>0</button>

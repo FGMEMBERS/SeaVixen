@@ -486,7 +486,7 @@
 	</model>
 
 	<!-- **************** Left Top. Panel *********** -->
-	
+
 	<!-- **************** lamp holders ********** -->
 	<model>
 		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
@@ -496,7 +496,7 @@
 			<z-m>0.690</z-m>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
 		<offsets>
@@ -514,7 +514,7 @@
 			<z-m>0.755</z-m>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/SeaVixen/Models/dolls-eye-fuel-filter.xml</path>
 		<offsets>
@@ -579,7 +579,7 @@
 			<z-m>0.6825</z-m>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/SeaVixen/Models/magnetic-indicator-5.xml</path>
 		<offsets>
@@ -588,7 +588,7 @@
 			<z-m>0.7131</z-m>
 		</offsets>
 	</model>
-	
+
 	<model>
 		<path>Aircraft/SeaVixen/Models/magnetic-indicator-6.xml</path>
 		<offsets>
@@ -753,7 +753,7 @@
 		</offsets>
 	</model>-->
 
-  <!--<model>
+	<!--<model>
 		<path>Aircraft/SeaVixen/Models/blackout.xml</path>
 		<name>Blackout</name>
 		<offsets>
@@ -762,7 +762,7 @@
 			<z-m>0.95</z-m>
 		</offsets>
 	</model>-->
-	
+
 	<model>
 		<path>Aircraft/SeaVixen/Models/strop.xml</path>
 		<name>New-Strop</name>
@@ -900,7 +900,7 @@
 		<object-name>Tail-Cone</object-name>-->
 		<object-name>Pilot Seat</object-name>
 		<object-name>canopy</object-name>
-    <object-name>hatch</object-name>
+		<object-name>hatch</object-name>
 		<!--<object-name>Blackout</object-name>-->
 		<condition>
 			<greater-than-equals>
@@ -1659,7 +1659,7 @@
 		<type>rotate</type>
 		<object-name>aileron-port</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>10</factor>
+		<factor>20</factor>
 		<axis>
 			<x1-m>11.65</x1-m>
 			<y1-m>-7.22</y1-m>
@@ -1675,7 +1675,7 @@
 		<type>rotate</type>
 		<object-name>aileron-stbd</object-name>
 		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>-10</factor>
+		<factor>20</factor>
 		<axis>
 			<x1-m>11.65</x1-m>
 			<y1-m>7.22</y1-m>
@@ -1690,7 +1690,7 @@
 	<!-- Left -->
 	<animation>
 		<type>rotate</type>
-		<object-name>tailplane</object-name>
+		<object-name>tailplane-assmbly</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
 		<factor>10</factor>
 		<center>
@@ -2384,37 +2384,31 @@
 
 
 	<!-- nose wheel castering -->
-	<!--<animation>
-		<type>rotate</type>
-		<object-name>F-Wheel</object-name>
-		<object-name>F-Arm</object-name>
-		<object-name>F-DArm</object-name>
-		<property>gear/gear/caster-angle-deg</property>
-		<factor>-1</factor>
-		<axis>
-			<x1-m>-5.23</x1-m>
-			<y1-m>0</y1-m>
-			<z1-m>-0.67</z1-m>
-			<x2-m>-5.23</x2-m>
-			<y2-m>0</y2-m>
-			<z2-m>-1.03</z2-m>
-		</axis>
-	</animation>
 	<animation>
 		<type>rotate</type>
-		<object-name>F-Lower-Leg</object-name>
+		<object-name>axle-nose</object-name>
+		<object-name>pivot-fork</object-name>
+		<object-name>leg-lower</object-name>
+		<object-name>swing-arm</object-name>
+		<object-name>oleo</object-name>
+		<object-name>bracket-oleo</object-name>
+		<object-name>swing-arm</object-name>
+		<object-name>oleo</object-name>
+		<object-name>bracket-oleo</object-name>
+		<object-name>pivot-oleo</object-name>
+		<object-name>wheel-nose</object-name>
 		<property>gear/gear/caster-angle-deg</property>
 		<factor>-1</factor>
+		<!--2.53364	-1.34469	-3.00352e-008-->-
 		<axis>
-			<x1-m>-5.23</x1-m>
+			<x1-m>2.53364</x1-m>
 			<y1-m>0</y1-m>
-			<z1-m>-0.67</z1-m>
-			<x2-m>-5.23</x2-m>
+			<z1-m>-1.34469</z1-m>
+			<x2-m>2.53364</x2-m>
 			<y2-m>0</y2-m>
-			<z2-m>-1.03</z2-m>
+			<z2-m>1.34469</z2-m>
 		</axis>
-	</animation>-->
-
+	</animation>
 
 	<!-- Compression -->
 
@@ -2461,7 +2455,7 @@
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>18</dep>
+				<dep>10</dep>
 			</entry>
 			<entry>
 				<ind>0.5</ind>
@@ -3186,60 +3180,58 @@
 	</animation>
 
 	<!-- spin wheels -->
-	<!--<animation>
+	<animation>
 		<type>spin</type>
-		<object-name>F-Wheel</object-name>
-		<property>gear/gear/rollspeed-ms</property>
-		<factor>42.7261</factor>
-		<center>
-			<x-m>-5.08547</x-m>
-			<y-m>0</y-m>
-			<z-m>-1.35518</z-m>
-		</center>
+		<object-name>wheel-nose</object-name>
+		<property>gear/gear[0]/rollspeed-ms</property>
+		<factor>29.7035186838</factor>
+		<!--2.71118	-1.67833	-0.141993-->
 		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
+			<x1-m>2.71118</x1-m>
+			<y1-m>0.141993</y1-m>
+			<z1-m>-1.67833</z1-m>
+			<x2-m>2.71118</x2-m>
+			<y2-m>-0.141993</y2-m>
+			<z2-m>-1.67833</z2-m>
 		</axis>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>UC-L-Hub</object-name>
-		<object-name>UC-L-Tyre</object-name>
+		<object-name>wheel-port</object-name>
 		<property>gear/gear[1]/rollspeed-ms</property>
-		<factor>28.0862</factor>
-		<center>
-			<x-m>-0.10194</x-m>
-			<y-m>-2.24904</y-m>
-			<z-m>-1.1593</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
-		</axis>
-	</animation>
+		<factor>20.071509</factor>
+		<!--8.00257	-1.28869	2.82268
+		8.00257	-1.28869	2.54052-->
+<axis>
+	<x1-m>8.00257</x1-m>
+	<y1-m>-2.82268</y1-m>
+	<z1-m>-1.28869</z1-m>
+	<x2-m>8.00257</x2-m>
+	<y2-m>-2.540523</y2-m>
+	<z2-m>-1.28869</z2-m>
+</axis>
+</animation>
 
-	<animation>
+<animation>
 		<type>spin</type>
-		<object-name>UC-R-Hub</object-name>
-		<object-name>UC-R-Tyre</object-name>
+		<object-name>wheel-stbd</object-name>
 		<property>gear/gear[2]/rollspeed-ms</property>
-		<factor>28.0862</factor>
-		<center>
-			<x-m>-0.10194</x-m>
-			<y-m>2.24904</y-m>
-			<z-m>-1.1593</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>-1.0</y>
-			<z>0.0</z>
-		</axis>
-	</animation>
--->
-	<!-- ********************** Exhaust ******************* -->
+		<factor>20.071509</factor>
+		<!--8.00257	-1.28869	2.82268
+		8.00257	-1.28869	2.54052-->
+<axis>
+	<x1-m>8.00257</x1-m>
+	<y1-m>2.82268</y1-m>
+	<z1-m>-1.28869</z1-m>
+	<x2-m>8.00257</x2-m>
+	<y2-m>2.540523</y2-m>
+	<z2-m>-1.28869</z2-m>
+</axis>
+</animation>
+
+
+<!-- ********************** Exhaust ******************* -->
 	<!-- 
 	<animation>
 		<type>shader</type>
@@ -3328,29 +3320,40 @@
 -->
 	<!-- ***************** Canopy *********************** -->
 	<animation>
+		<type>select</type>
+		<condition>
+			<not>
+				<property>/controls/gear/canopy-jettison</property>
+			</not>
+		</condition>
+		<object-name>main</object-name>
+		<object-name>frame-main</object-name>
+	</animation>
+
+	<animation>
 		<type>translate</type>
 		<object-name>main</object-name>
-    <object-name>frame-main</object-name>
+		<object-name>frame-main</object-name>
 		<property>gear/canopy/position-norm</property>
 		<!--<factor>0.8</factor>-->
-    <interpolation>
-      <entry>
-        <ind>0</ind>
-        <dep>0</dep>
-      </entry>
-      <entry>
-        <ind>0.4</ind>
-        <dep>0.4</dep>
-      </entry>
-      <entry>
-        <ind>0.8</ind>
-        <dep>0.8</dep>
-      </entry>
-      <entry>
-        <ind>1.0</ind>
-        <dep>0.8</dep>
-      </entry>
-    </interpolation>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>0.4</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>0.8</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0.8</dep>
+			</entry>
+		</interpolation>
 		<axis>
 			<x>1</x>
 			<y>0</y>
@@ -3358,47 +3361,47 @@
 		</axis>
 	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>hatch</object-name>
-    <property>gear/canopy/position-norm</property>
-    <!--4.6323	0.776321	-0.175634
-    4.6323	0.70263-->
-    <interpolation>
-      <entry>
-        <ind>0</ind>
-        <dep>0</dep>
-      </entry>
-      <entry>
-        <ind>0.01</ind>
-        <dep>5</dep>
-      </entry>
-      <entry>
-        <ind>0.15</ind>
-        <dep>5</dep>
-      </entry>
-      <entry>
-        <ind>0.45</ind>
-        <dep>35</dep>
-      </entry>
-      <entry>
-        <ind>0.75</ind>
-        <dep>75</dep>
-      </entry>
-      <entry>
-        <ind>1.0</ind>
-        <dep>75</dep>
-      </entry>
-    </interpolation>
-    <axis>
-      <x1-m>4.6323</x1-m>
-      <y1-m>0.175634</y1-m>
-      <z1-m>0.776321</z1-m>
-      <x2-m>4.6323</x2-m>
-      <y2-m>0.488823</y2-m>
-      <z2-m>0.70263</z2-m>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>hatch</object-name>
+		<property>gear/canopy/position-norm</property>
+		<!--4.6323	0.776321	-0.175634
+		4.6323	0.70263-->
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.01</ind>
+				<dep>5</dep>
+			</entry>
+			<entry>
+				<ind>0.15</ind>
+				<dep>5</dep>
+			</entry>
+			<entry>
+				<ind>0.45</ind>
+				<dep>35</dep>
+			</entry>
+			<entry>
+				<ind>0.75</ind>
+				<dep>75</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>75</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x1-m>4.6323</x1-m>
+			<y1-m>0.175634</y1-m>
+			<z1-m>0.776321</z1-m>
+			<x2-m>4.6323</x2-m>
+			<y2-m>0.488823</y2-m>
+			<z2-m>0.70263</z2-m>
+		</axis>
+	</animation>
 
 	<!-- Left Wing -->
 	<animation>
@@ -3529,7 +3532,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>AHook-door</object-name>
+		<object-name>AHook-door-assmbly</object-name>
 		<property>gear/tailhook/position-norm</property>
 		<interpolation>
 			<entry>
@@ -3804,6 +3807,37 @@
 		<texture>chrome2.rgb</texture>
 		<object-name>jack-airbrake-lower</object-name>
 	</animation>
+
+<!-- ============== Smoke effects ================== -->
+  <model>
+    <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+    <name>tyre-smoke-n</name>
+    <offsets>
+      <x-m>-3.97144</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.43238</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+    <name>tyre-smoke-p</name>
+    <offsets>
+      <x-m>-0.0935892</x-m>
+      <y-m>-1.243720</y-m>
+      <z-m>-1.2934</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+    <name>tyre-smoke-s</name>
+    <offsets>
+      <x-m>-0.0935892</x-m>
+      <y-m>1.243720</y-m>
+      <z-m>-1.2934</z-m>
+    </offsets>
+  </model>
 
 	<!-- *** LoD for the whole model *** -->
 	<animation>

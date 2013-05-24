@@ -1,5 +1,8 @@
 # this script contains a number of utilities for use with the Sea Vixen
 
+#does what it says on the tin
+var clamp = func(v, min, max) { v < min ? min : v > max ? max : v }
+
 # ================================ Initalize ====================================== 
 # Make sure all needed properties are present and accounted
 # for, and that they have sane default values.
@@ -18,6 +21,7 @@ headshake = nil;
 airbrake = nil;
 flaps = nil;
 crossfeed = nil;
+ailerons = nil;
 
 
 var time = 0;
@@ -32,6 +36,13 @@ var last_xDivergence = 0;
 var last_yDivergence = 0;
 var last_zDivergence = 0;
 
+var run_tyresmoke0 = 0;
+var run_tyresmoke1 = 0;
+var run_tyresmoke2 = 0;
+
+var tyresmoke_0 = aircraft.tyresmoke.new(0,1,0.5);
+var tyresmoke_1 = aircraft.tyresmoke.new(1,1,0.5);
+var tyresmoke_2 = aircraft.tyresmoke.new(2,1,0.5);
 
 initialize = func {
 
@@ -42,7 +53,9 @@ initialize = func {
 	headshake = HeadShake.new();
 	airbrake = Airbrake.new();
 	flaps = Flaps.new();
+	ailerons = Ailerons.new();
 	aircraft.steering.init();
+
 	#crossfeed = FuelCock.new("crossfeed",
 	#						"controls/fuel/crossfeed",
 	#						0
@@ -71,11 +84,13 @@ update = func {
 
 	pilot_g.update();
 	pilot_g.gmeter_update();
+	ailerons.update();
 	
 	if ( enabledNode.getValue() and view_number_Node.getValue() == 0 ) {
 		headshake.update();
 	}
 		
+	#print ("run_tyresmoke ",run_tyresmoke);
 	
 	
 	settimer( update, 0 ); 
@@ -182,6 +197,36 @@ Flaps = {
 	},
 }; #  end flap stuff 
 	
+###
+# Class that specifies aileron functions 
+##
+Ailerons = {
+	new : func ( name = "ailerons",
+				aileron_input = "controls/flight/aileron",
+				aileron_actuator_left = "/systems/hydraulic/outputs/aileron", 
+				aileron_actuator_right = "/systems/hydraulic/outputs/aileron[1]"
+				){
+		var obj = { parents : [Ailerons] };
+		obj.name = name;
+		obj.input = props.globals.getNode( aileron_input, 1 );
+		obj.output_left = props.globals.getNode( aileron_actuator_left, 1 );
+		obj.output_right = props.globals.getNode( aileron_actuator_right, 1 );
+		obj.output_left.setDoubleValue(0);
+		obj.output_right.setDoubleValue(0);
+		
+		print ( obj.name );
+		return obj;
+	},
+update : func () {             #adjusts the ailerons
+	var x = me.input.getValue();
+	var y = -0.25 * x * x + 0.75 * x;
+
+	me.output_left.setValue( clamp(y, -1.0, 0.5 ));
+
+	y = 0.25 * x * x + 0.75 * x;
+	me.output_right.setValue( clamp(y, -0.5, 1.0 ));
+	},
+}; #  end aileron stuff 
 # =========================== end hydraulic stuff ==============================	
 
 # =============================== Pilot G stuff ================================
@@ -419,16 +464,10 @@ HeadShake = {
 		},
 	};
 
-
-
-
 # ======================================= end Pilot G stuff ============================
 
 # Fire it up
 
-	setlistener("/sim/signals/fdm-initialized", func {
-	initialize();
-	}
-);
+settimer(initialize,0);
 
 # end 

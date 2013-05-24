@@ -62,7 +62,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Needle1-m</object-name>
-		<property>instrumentation/heading-indicator/heading-bug-deg/</property>
+		<property>/autopilot/settings/heading-bug-deg</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -147,7 +147,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Needle1-t</object-name>
-		<property>instrumentation/heading-indicator/heading-bug-deg/</property>
+		<property>/autopilot/settings/heading-bug-deg</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -180,7 +180,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Knob1</object-name>
-		<property>instrumentation/heading-indicator/heading-bug-deg/</property>
+		<property>/autopilot/settings/heading-bug-deg</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -250,7 +250,33 @@
 		</emission>
 	</animation>
 
-	<!-- *** LoD *** -->
+
+  <animation>
+    <type>knob</type>
+    <object-name>Knob1</object-name>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>1.0</factor>
+        <min>0</min>
+        <max>359</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <label>Heading: %3d deg</label>
+        <tooltip-id>panel_light</tooltip-id>
+        <mapping>double</mapping>
+        <property>/autopilot/settings/heading-bug-deg</property>
+      </binding>
+    </hovered>
+  </animation>
+
+
+  <!-- *** LoD *** -->
 	<animation>
 		<type>range</type>
 		<min-m>0</min-m>
