@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- Attitude -->
+<PropertyList>
+	<path>attitude-rb.ac</path>
+	<animation>
+		<type>rotate</type>
+		<object-name>roll-marker</object-name>
+		<!--<property>orientation/roll-deg</property>-->
+		<property>instrumentation/master-reference-gyro/indicated-roll-deg</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>texmultiple</type>
+		<object-name>face</object-name>
+		<transform>
+			<property>instrumentation/master-reference-gyro/indicated-pitch-deg</property>
+			<subtype>textranslate</subtype>
+			<factor>0.00278</factor>
+			<!--<max>0.045</max>
+      <min>-0.045</min>-->
+			<axis>
+				<x>0</x>
+				<y>1</y>
+				<z>0</z>
+			</axis>
+		</transform>
+		<transform>
+			<property>instrumentation/master-reference-gyro/indicated-roll-deg</property>
+			<subtype>texrotate</subtype>
+			<min>-360.0</min>
+			<max>360.0</max>
+			<center>
+				<x>0.5</x>
+				<y>0.5</y>
+			</center>
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</axis>
+		</transform>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>flag-off</object-name>
+		<condition>
+			<property>instrumentation/master-reference-gyro/off-flag</property>
+			<value>1</value>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<emission>
+			<factor-prop>/controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<PropertyList>
+	<help>
+		<title>Sea Vixen FAW2</title>
+		<key>
+			<name>Ctrl-B</name>
+			<desc>toggle speedbrake</desc>
+		</key>
+		<key>
+			<name>f/F</name>
+			<desc>canopy open/close</desc>
+		</key>
+		<key>
+			<name>Ctrl-F</name>
+			<desc>emergency flap lowering</desc>
+		</key>
+		<key>
+			<name>Ctrl-S</name>
+			<desc>toggle auto-throttle</desc>
+		</key>
+		<key>
+			<name>u/U</name>
+			<desc>seat down/up</desc>
+		</key>
+		<key>
+			<name>Ctrl-U</name>
+			<desc>seat default</desc>
+		</key>
+		<key>
+			<name>Ctrl-J</name>
+			<desc>Jettison drop-tanks</desc>
+		</key>
+		<key>
+			<name>o/O</name>
+			<desc>hook up/down</desc>
+		</key>
+		<line>Take Off(Airfield): Raise nosewheel at 100kts, allow to fly off at 140-160 kts</line>
+		<line>Raise Gear and Flaps before 220 kts IAS</line>
+		<line>Take Off(Carrier): Use full flaps, adopt 9 degrees incidence at end of Cat;</line>
+		<line>once climbing steadily, raise gear - raise flaps to 20 degrees after 140kts are attained</line>
+		<line>raise remainder of flap after confirming that the aircraft is still accelerating.</line>
+		<line></line>
+		<line>Landing: reduce speed to 220 kts, lower gear and select 20 degrees flap;</line>
+		<line>Be aware of the increased elevator gearing with gear selected down</line>
+		<line>Approach at 150kts (around 125 for carrier) with full flap, and engage auto-throttle</line>
+		<line>Upon touchdown close throttles, lower nosewheel around 90 kts while still under rudder authority</line>
+	</help>
+</PropertyList>

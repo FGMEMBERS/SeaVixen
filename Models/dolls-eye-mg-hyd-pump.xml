@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!-- wrapper for dolls eye magnetic indicator -->
+<PropertyList>
+
+	<path>dolls-eye.ac</path>
+
+	<animation>
+		<type>select</type>
+		<object-name>black-disk</object-name>
+	</animation>
+
+	<!--<animation>
+		<type>select</type>
+		<object-name>white-disk</object-name>
+		<condition>
+			<or>
+				<property>consumables/fuel/tank[6]/transfering</property>
+				<property>consumables/fuel/tank[12]/transfering</property>
+			</or>
+		</condition>
+	</animation>-->
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>

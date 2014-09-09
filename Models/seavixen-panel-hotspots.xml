@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+<!-- This part should be the same for any 3D panel.  Customize the actions section -->
+<PropertyList>
+	<name>Sea Vixen N=Main Panel Hotspots</name>
+	<background>Aircraft/SeaVixen/Models/transparent-bg.rgb</background>
+	<w>1024</w>
+	<h>768</h>
+	<y-offset>0</y-offset>
+	<x-offset>-7</x-offset>
+	<instruments>
+		<instrument>
+			<name>Panel AU</name>
+			<y>384</y>
+			<x>512</x>
+			<w>1024</w>
+			<h>768</h>
+			<w-base>1024</w-base>
+			<h-base>1024</h-base>
+			<layers>
+				<layer>
+					<name>background</name>
+					<texture>
+						<path>Aircraft/SeaVixen/Models/transparent-bg.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+
+				<!--<layer>
+          <name>grid</name>
+          <texture>
+            <path>Aircraft/Hunter/Models/hotspotgrid.rgb</path>
+            <x1>0.0</x1>
+            <y1>0.0</y1>
+            <x2>1.0</x2>
+            <y2>1.0</y2>
+          </texture>
+        </layer>-->
+			</layers>
+			
+			<!-- define hotspot actions below -->
+			<actions>
+				<!-- ************** hsi hotspots ************** -->
+				<!-- left knob heading-bug -->
+				<!--<action>
+					<name>ccw-fine</name>
+					<button>0</button>
+					<x>140</x>
+					<y>290</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>autopilot/settings/heading-bug-deg</property>
+						<step>-1</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>true</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>ccw-coarse</name>
+					<button>1</button>
+					<x>140</x>
+					<y>290</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>autopilot/settings/heading-bug-deg</property>
+						<step>-10</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>1</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>cw-fine</name>
+					<button>0</button>
+					<x>170</x>
+					<y>290</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>autopilot/settings/heading-bug-deg</property>
+						<step>1</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>true</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>cw-coarse</name>
+					<button>1</button>
+					<x>170</x>
+					<y>290</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>autopilot/settings/heading-bug-deg</property>
+						<step>10</step>
+						<min>0</min>
+						<max>360</max>
+						<wrap>1</wrap>
+					</binding>
+				</action>-->
+				<!-- middle button source select -->
+				<action>
+					<name>source select</name>
+					<button>0</button>
+					<x>200</x>
+					<y>290</y>
+					<w>25</w>
+					<h>60</h>
+					<binding>
+						<command>property-toggle</command>
+						<property>instrumentation/heading-indicator/heading-source</property>
+					</binding>
+				</action>
+				<!-- ************** altimeter hotspots ************** -->
+				<action>
+					<name>calibrate fine ccw</name>
+					<button>0</button>
+					<x>-165</x>
+					<y>-5</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>-0.01</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>calibrate coarse ccw</name>
+					<button>1</button>
+					<x>-165</x>
+					<y>-5</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>-0.1</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>calibrate fine cw</name>
+					<button>0</button>
+					<x>-135</x>
+					<y>-5</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>0.01</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+				<action>
+					<name>calibrate coarse cw</name>
+					<button>1</button>
+					<x>-135</x>
+					<y>-5</y>
+					<w>30</w>
+					<h>60</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>instrumentation/altimeter/setting-inhg</property>
+						<step>0.1</step>
+						<min>26.0</min>
+						<max>33.0</max>
+						<wrap>false</wrap>
+					</binding>
+				</action>
+			</actions>
+		</instrument>
+	</instruments>
+</PropertyList>
