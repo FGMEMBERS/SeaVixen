@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+<!-- This part should be the same for any 3D panel.  Customize the actions section -->
+<PropertyList>
+	<name>Upper Panel Hotspots</name>
+	<background>Aircraft/SeaVixen/Models/transparent-bg.rgb</background>
+	<w>1024</w>
+	<h>768</h>
+	<y-offset>0</y-offset>
+	<x-offset>0</x-offset>
+	<instruments>
+		<instrument>
+			<name>Panel AU</name>
+			<x>512</x>
+			<y>384</y>
+			<w>1024</w>
+			<h>768</h>
+			<w-base>1024</w-base>
+			<h-base>1024</h-base>
+			<layers>
+				<layer>
+					<name>background</name>
+					<texture>
+						<path>Aircraft/SeaVixen/Models/transparent-bg.rgb</path>
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+				<!--<layer>
+          <name>grid</name>
+          <texture>
+            <path>Aircraft/Hunter/Models/hotspotgrid.rgb</path>
+            <x1>0.0</x1>
+            <y1>0.0</y1>
+            <x2>1.0</x2>
+            <y2>1.0</y2>
+          </texture>
+        </layer>-->
+			</layers>
+
+			<!-- define hotspot actions below -->
+			<actions>
+				
+				<!-- ************** autopilot hotspots ************** -->
+
+				<!-- autostab rudder switch -->
+				<!--<action>
+					<name>autostab rudder up</name>
+					<button>0</button>
+					<x>190</x>
+					<y>90</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/auto-stabs/yaw_channel</property>
+						<value type="bool">1</value>
+					</binding>
+				</action>
+				<action>
+					<name>autostab rudder down</name>
+					<button>0</button>
+					<x>190</x>
+					<y>-30</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/auto-stabs/yaw_channel</property>
+						<value type="bool">0</value>
+					</binding>
+				</action>-->
+				<!-- autostab elevon switch -->
+				<!--<action>
+					<name>autostab elevon up</name>
+					<button>0</button>
+					<x>240</x>
+					<y>90</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/auto-stabs/pitch_channel</property>
+						<value type="bool">1</value>
+					</binding>
+				</action>
+				<action>
+					<name>autostab elevon down</name>
+					<button>0</button>
+					<x>240</x>
+					<y>-30</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/auto-stabs/pitch_channel</property>
+						<value type="bool">0</value>
+					</binding>
+				</action>-->
+				<!--<action>
+					<name>autopilot heading hold on</name>
+					<button>0</button>
+					<x>215</x>
+					<y>-430</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/autopilot/heading_channel</property>
+						<value type="int">1</value>
+					</binding>
+				</action>-->
+				<action>
+					<name>autopilot height hold off</name>
+					<button>0</button>
+					<x>265</x>
+					<y>-345</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/autopilot/height_channel</property>
+						<value type="int">0</value>
+					</binding>
+				</action>
+				<action>
+					<name>autopilot speed hold </name>
+					<button>0</button>
+					<x>295</x>
+					<y>-245</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/autopilot/height_channel</property>
+						<value type="int">1</value>
+					</binding>
+				</action>
+				<action>
+					<name>autopilot mach hold </name>
+					<button>0</button>
+					<x>325</x>
+					<y>-245</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/autopilot/height_channel</property>
+						<value type="int">2</value>
+					</binding>
+				</action>
+				<action>
+					<name>autopilot mach hold </name>
+					<button>0</button>
+					<x>355</x>
+					<y>-345</y>
+					<w>30</w>
+					<h>100</h>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/switches/autopilot/height_channel</property>
+						<value type="int">3</value>
+					</binding>
+				</action>
+			</actions>
+		</instrument>
+	</instruments>
+</PropertyList>

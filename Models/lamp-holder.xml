@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- wrapper for lampholder -->
+<PropertyList>
+
+	<path>lamp-holder.ac</path>
+
+	<!-- *** LoD *** -->
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+</PropertyList>
