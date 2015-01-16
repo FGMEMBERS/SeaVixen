@@ -161,7 +161,7 @@ raise/lower, emergency flap lowering, and 2 flap steps.
   </instrumentation>
   <!-- map keyboard input -->
   <input>
-    <keyboard include="../../Input/Keyboard/carrier-bindings.xml">
+    <keyboard include="Input/Keyboard/carrier-bindings.xml">
       <!-- map keys for airbrake interlock -->
       <key n="2">
         <name>Ctrl-B</name>
