@@ -3,8 +3,200 @@
 <!-- started Vivian Meazza 2006/7/1 vivian.meazza@lineone.net -->
 <!-- Ver 0.1.0-->
 <PropertyList>
-	<path>sea-vixen-FAW2-ver2.ac</path>
+	<path>sea-vixen-FAW2-ver1.ac</path>
+	
+	<!-- MP sound call -->
+  <sound><path>Aircraft/SeaVixen/Sounds/mp-sound.xml</path></sound>
+	
+	
+<nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/SeaVixen/Models/Liveries", 10);
+	  
+	  
+      var self = cmdarg();
 
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+	  
+    </load>
+   <unload>
+      livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
+    </unload> 
+  </nasal>
+
+<animation>
+    <type>material</type>
+    <object-name>radome</object-name>
+    <object-name>fuselage-front</object-name>
+    <object-name>fuselage-rear</object-name>
+    <object-name>object</object-name>
+    <object-name>main</object-name>
+    <object-name>frame-main</object-name>
+    <object-name>frame</object-name>
+    <object-name>strut-port</object-name>
+    <object-name>strut-centre</object-name>
+    <object-name>strut-stbd</object-name>
+    <object-name>cylinder.007</object-name>
+    <object-name>intake-ramp</object-name>
+    <object-name>intakes</object-name>
+    <object-name>boom-port</object-name>
+<object-name>boom-stbd</object-name>
+<object-name>wing-inner-port</object-name>
+    <object-name>wing-inner-stbd</object-name>
+    <object-name>wing-port</object-name>
+    <object-name>wing-stbd</object-name>
+    <object-name>aileron-port</object-name>
+    <object-name>aileron-stbd</object-name>
+    <object-name>tailcone</object-name>
+    <object-name>tailplane</object-name>
+    <object-name>flap-tail</object-name>
+    <object-name>rudder-port</object-name>
+    <object-name>tail-bumper-port</object-name>
+    <object-name>rudder-stbd</object-name>
+    <object-name>tail-bumper-stbd</object-name>
+<object-name>flap-outer-stbd</object-name>
+<object-name>flap-inner-part-stbd</object-name>
+<object-name>flap-outer-port</object-name>
+<object-name>flap-inner-part-port</object-name>
+<object-name>boom-part-port</object-name>
+<object-name>boom-part-stbd</object-name>
+<object-name>AHookFairing-rear</object-name>
+<object-name>AHookFairing-front</object-name>
+<object-name>Bag</object-name>
+<object-name>AHook-door</object-name>
+<object-name>AHook8</object-name>
+<object-name>Bar</object-name>
+<object-name>door-inner-stbd</object-name>
+<object-name>door-outer-stbd</object-name>
+<object-name>door-inner-port</object-name>
+<object-name>door-outer-port</object-name>
+<object-name>intake-cooling-port</object-name>
+<object-name>airbrake-panel</object-name>
+<object-name>fairing</object-name>
+<object-name>strakes</object-name>
+<object-name>Strop</object-name>
+<object-name>cylinder.001</object-name>
+<object-name>cylinder</object-name>
+<object-name>nose-door-rear-port</object-name>
+    <object-name>nose-door-rear-stbd</object-name>
+    <object-name>door-front</object-name>
+    <object-name>rocket-pack-fairing</object-name>
+    <object-name>fuselage-rear</object-name>
+	<object-name>wing-fence-stbd</object-name>
+	<object-name>wing-fence-port</object-name>
+	<object-name>hatch-fairing</object-name>
+	<object-name>fuselage-rear-lower</object-name>
+	<object-name>main_tube</object-name>
+	
+	
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
+  </animation>	
+	
+	<!-- Cockpit Glass -->
+<animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <object-name>main</object-name>
+<object-name>side-screen-port</object-name>
+<object-name>windscreen-port</object-name>
+<object-name>windscreen-stbd</object-name>
+<object-name>side-screen-stbd</object-name>
+<object-name>hatch</object-name>    
+  </animation>
+  
+  
+  <!-- Solid Surfaces for Rembrandt rendering -->
+       
+   
+   <animation>
+    
+   <object-name>radome</object-name>
+    <object-name>fuselage-front</object-name>
+    <object-name>fuselage-rear</object-name>
+    <object-name>object</object-name>
+    <object-name>main</object-name>
+    <object-name>frame-main</object-name>
+    <object-name>frame</object-name>
+    <object-name>strut-port</object-name>
+    <object-name>strut-centre</object-name>
+    <object-name>strut-stbd</object-name>
+    <object-name>cylinder.007</object-name>
+    <object-name>intake-ramp</object-name>
+    <object-name>intakes</object-name>
+    <object-name>boom-port</object-name>
+<object-name>boom-stbd</object-name>
+<object-name>wing-inner-port</object-name>
+    <object-name>wing-inner-stbd</object-name>
+    <object-name>wing-port</object-name>
+    <object-name>wing-stbd</object-name>
+    <object-name>aileron-port</object-name>
+    <object-name>aileron-stbd</object-name>
+    <object-name>tailcone</object-name>
+    <object-name>tailplane</object-name>
+    <object-name>flap-tail</object-name>
+    <object-name>rudder-port</object-name>
+    <object-name>tail-bumper-port</object-name>
+    <object-name>rudder-stbd</object-name>
+    <object-name>tail-bumper-stbd</object-name>
+<object-name>flap-outer-stbd</object-name>
+<object-name>flap-inner-part-stbd</object-name>
+<object-name>flap-outer-port</object-name>
+<object-name>flap-inner-part-port</object-name>
+<object-name>boom-part-port</object-name>
+<object-name>boom-part-stbd</object-name>
+<object-name>AHookFairing-rear</object-name>
+<object-name>AHookFairing-front</object-name>
+<object-name>Bag</object-name>
+<object-name>AHook-door</object-name>
+<object-name>AHook8</object-name>
+<object-name>Bar</object-name>
+<object-name>door-inner-stbd</object-name>
+<object-name>door-outer-stbd</object-name>
+<object-name>door-inner-port</object-name>
+<object-name>door-outer-port</object-name>
+<object-name>intake-cooling-port</object-name>
+<object-name>airbrake-panel</object-name>
+<object-name>fairing</object-name>
+<object-name>strakes</object-name>
+<object-name>Strop</object-name>
+<object-name>cylinder.001</object-name>
+<object-name>cylinder</object-name>
+<object-name>nose-door-rear-port</object-name>
+    <object-name>nose-door-rear-stbd</object-name>
+    <object-name>door-front</object-name>
+    <object-name>rocket-pack-fairing</object-name>
+    <object-name>fuselage-rear</object-name>
+	<object-name>wing-fence-stbd</object-name>
+	<object-name>wing-fence-port</object-name>
+	<object-name>hatch-fairing</object-name>
+	<object-name>fuselage-rear-lower</object-name>
+	<object-name>main_tube</object-name>
+    </animation>
+  
 	<!-- ***************** Cockpit *************************** -->
 	<!-- Front hotspots -->
 	<panel>
@@ -486,7 +678,7 @@
 	</model>
 
 	<!-- **************** Left Top. Panel *********** -->
-
+	
 	<!-- **************** lamp holders ********** -->
 	<model>
 		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
@@ -496,7 +688,7 @@
 			<z-m>0.690</z-m>
 		</offsets>
 	</model>
-
+	
 	<model>
 		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
 		<offsets>
@@ -514,7 +706,7 @@
 			<z-m>0.755</z-m>
 		</offsets>
 	</model>
-
+	
 	<model>
 		<path>Aircraft/SeaVixen/Models/dolls-eye-fuel-filter.xml</path>
 		<offsets>
@@ -579,7 +771,7 @@
 			<z-m>0.6825</z-m>
 		</offsets>
 	</model>
-
+	
 	<model>
 		<path>Aircraft/SeaVixen/Models/magnetic-indicator-5.xml</path>
 		<offsets>
@@ -588,7 +780,7 @@
 			<z-m>0.7131</z-m>
 		</offsets>
 	</model>
-
+	
 	<model>
 		<path>Aircraft/SeaVixen/Models/magnetic-indicator-6.xml</path>
 		<offsets>
@@ -737,23 +929,23 @@
 		<path>Aircraft/SeaVixen/Models/ejection-seat.xml</path>
 		<name>Pilot Seat</name>
 		<offsets>
-			<x-m>3.65</x-m>
+			<x-m>3.72</x-m>
 			<y-m>-0.33</y-m>
 			<z-m>-0.08</z-m>
 		</offsets>
 	</model>
 
-	<!--<model>
+	<model>
 		<path>Aircraft/SeaVixen/Models/ejection-seat.xml</path>
 		<name>Observer Seat</name>
 		<offsets>
-			<x-m>4.125</x-m>
+			<x-m>4.160</x-m>
 			<y-m>0.388</y-m>
-			<z-m>-0.625</z-m>
+			<z-m>-0.701</z-m>
 		</offsets>
-	</model>-->
+	</model>
 
-	<!--<model>
+  <model>
 		<path>Aircraft/SeaVixen/Models/blackout.xml</path>
 		<name>Blackout</name>
 		<offsets>
@@ -761,8 +953,8 @@
 			<y-m>-0.324</y-m>
 			<z-m>0.95</z-m>
 		</offsets>
-	</model>-->
-
+	</model>
+	
 	<model>
 		<path>Aircraft/SeaVixen/Models/strop.xml</path>
 		<name>New-Strop</name>
@@ -900,8 +1092,7 @@
 		<object-name>Tail-Cone</object-name>-->
 		<object-name>Pilot Seat</object-name>
 		<object-name>canopy</object-name>
-		<object-name>hatch</object-name>
-		<!--<object-name>Blackout</object-name>-->
+		<object-name>Blackout</object-name>
 		<condition>
 			<greater-than-equals>
 				<property>sim/current-view/view-number</property>
@@ -927,7 +1118,7 @@
 	<!-- **************************** Pilot ******************************* -->
 	<!--  conceal Pilot Head etc in Cockpit View -->
 
-	<animation>
+	<!--<animation>
 		<type>select</type>
 		<object-name>Pilot-Head</object-name>
 		<object-name>Helmet</object-name>
@@ -943,7 +1134,7 @@
 			</not>
 		</condition>
 	</animation>
-
+-->
 	<!-- Right arm -->
 	<!-- Roll -->
 
@@ -1659,7 +1850,7 @@
 		<type>rotate</type>
 		<object-name>aileron-port</object-name>
 		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>20</factor>
+		<factor>10</factor>
 		<axis>
 			<x1-m>11.65</x1-m>
 			<y1-m>-7.22</y1-m>
@@ -1675,7 +1866,7 @@
 		<type>rotate</type>
 		<object-name>aileron-stbd</object-name>
 		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>20</factor>
+		<factor>-10</factor>
 		<axis>
 			<x1-m>11.65</x1-m>
 			<y1-m>7.22</y1-m>
@@ -1690,7 +1881,7 @@
 	<!-- Left -->
 	<animation>
 		<type>rotate</type>
-		<object-name>tailplane-assmbly</object-name>
+		<object-name>tailplane</object-name>
 		<property>surface-positions/elevator-pos-norm</property>
 		<factor>10</factor>
 		<center>
@@ -2384,31 +2575,37 @@
 
 
 	<!-- nose wheel castering -->
-	<animation>
+	<!--<animation>
 		<type>rotate</type>
-		<object-name>axle-nose</object-name>
-		<object-name>pivot-fork</object-name>
-		<object-name>leg-lower</object-name>
-		<object-name>swing-arm</object-name>
-		<object-name>oleo</object-name>
-		<object-name>bracket-oleo</object-name>
-		<object-name>swing-arm</object-name>
-		<object-name>oleo</object-name>
-		<object-name>bracket-oleo</object-name>
-		<object-name>pivot-oleo</object-name>
-		<object-name>wheel-nose</object-name>
+		<object-name>F-Wheel</object-name>
+		<object-name>F-Arm</object-name>
+		<object-name>F-DArm</object-name>
 		<property>gear/gear/caster-angle-deg</property>
 		<factor>-1</factor>
-		<!--2.53364	-1.34469	-3.00352e-008-->-
 		<axis>
-			<x1-m>2.53364</x1-m>
+			<x1-m>-5.23</x1-m>
 			<y1-m>0</y1-m>
-			<z1-m>-1.34469</z1-m>
-			<x2-m>2.53364</x2-m>
+			<z1-m>-0.67</z1-m>
+			<x2-m>-5.23</x2-m>
 			<y2-m>0</y2-m>
-			<z2-m>1.34469</z2-m>
+			<z2-m>-1.03</z2-m>
 		</axis>
 	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>F-Lower-Leg</object-name>
+		<property>gear/gear/caster-angle-deg</property>
+		<factor>-1</factor>
+		<axis>
+			<x1-m>-5.23</x1-m>
+			<y1-m>0</y1-m>
+			<z1-m>-0.67</z1-m>
+			<x2-m>-5.23</x2-m>
+			<y2-m>0</y2-m>
+			<z2-m>-1.03</z2-m>
+		</axis>
+	</animation>-->
+
 
 	<!-- Compression -->
 
@@ -2455,7 +2652,7 @@
 		<interpolation>
 			<entry>
 				<ind>0</ind>
-				<dep>10</dep>
+				<dep>18</dep>
 			</entry>
 			<entry>
 				<ind>0.5</ind>
@@ -3180,58 +3377,60 @@
 	</animation>
 
 	<!-- spin wheels -->
-	<animation>
+	<!--<animation>
 		<type>spin</type>
-		<object-name>wheel-nose</object-name>
-		<property>gear/gear[0]/rollspeed-ms</property>
-		<factor>29.7035186838</factor>
-		<!--2.71118	-1.67833	-0.141993-->
+		<object-name>F-Wheel</object-name>
+		<property>gear/gear/rollspeed-ms</property>
+		<factor>42.7261</factor>
+		<center>
+			<x-m>-5.08547</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.35518</z-m>
+		</center>
 		<axis>
-			<x1-m>2.71118</x1-m>
-			<y1-m>0.141993</y1-m>
-			<z1-m>-1.67833</z1-m>
-			<x2-m>2.71118</x2-m>
-			<y2-m>-0.141993</y2-m>
-			<z2-m>-1.67833</z2-m>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
 		</axis>
 	</animation>
 
 	<animation>
 		<type>spin</type>
-		<object-name>wheel-port</object-name>
+		<object-name>UC-L-Hub</object-name>
+		<object-name>UC-L-Tyre</object-name>
 		<property>gear/gear[1]/rollspeed-ms</property>
-		<factor>20.071509</factor>
-		<!--8.00257	-1.28869	2.82268
-		8.00257	-1.28869	2.54052-->
-<axis>
-	<x1-m>8.00257</x1-m>
-	<y1-m>-2.82268</y1-m>
-	<z1-m>-1.28869</z1-m>
-	<x2-m>8.00257</x2-m>
-	<y2-m>-2.540523</y2-m>
-	<z2-m>-1.28869</z2-m>
-</axis>
-</animation>
+		<factor>28.0862</factor>
+		<center>
+			<x-m>-0.10194</x-m>
+			<y-m>-2.24904</y-m>
+			<z-m>-1.1593</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
 
-<animation>
+	<animation>
 		<type>spin</type>
-		<object-name>wheel-stbd</object-name>
+		<object-name>UC-R-Hub</object-name>
+		<object-name>UC-R-Tyre</object-name>
 		<property>gear/gear[2]/rollspeed-ms</property>
-		<factor>20.071509</factor>
-		<!--8.00257	-1.28869	2.82268
-		8.00257	-1.28869	2.54052-->
-<axis>
-	<x1-m>8.00257</x1-m>
-	<y1-m>2.82268</y1-m>
-	<z1-m>-1.28869</z1-m>
-	<x2-m>8.00257</x2-m>
-	<y2-m>2.540523</y2-m>
-	<z2-m>-1.28869</z2-m>
-</axis>
-</animation>
-
-
-<!-- ********************** Exhaust ******************* -->
+		<factor>28.0862</factor>
+		<center>
+			<x-m>-0.10194</x-m>
+			<y-m>2.24904</y-m>
+			<z-m>-1.1593</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+-->
+	<!-- ********************** Exhaust ******************* -->
 	<!-- 
 	<animation>
 		<type>shader</type>
@@ -3320,40 +3519,10 @@
 -->
 	<!-- ***************** Canopy *********************** -->
 	<animation>
-		<type>select</type>
-		<condition>
-			<not>
-				<property>/controls/gear/canopy-jettison</property>
-			</not>
-		</condition>
-		<object-name>main</object-name>
-		<object-name>frame-main</object-name>
-	</animation>
-
-	<animation>
 		<type>translate</type>
 		<object-name>main</object-name>
-		<object-name>frame-main</object-name>
 		<property>gear/canopy/position-norm</property>
-		<!--<factor>0.8</factor>-->
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.4</ind>
-				<dep>0.4</dep>
-			</entry>
-			<entry>
-				<ind>0.8</ind>
-				<dep>0.8</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>0.8</dep>
-			</entry>
-		</interpolation>
+		<factor>0.8</factor>
 		<axis>
 			<x>1</x>
 			<y>0</y>
@@ -3361,54 +3530,11 @@
 		</axis>
 	</animation>
 
-	<animation>
-		<type>rotate</type>
-		<object-name>hatch</object-name>
-		<property>gear/canopy/position-norm</property>
-		<!--4.6323	0.776321	-0.175634
-		4.6323	0.70263-->
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.01</ind>
-				<dep>5</dep>
-			</entry>
-			<entry>
-				<ind>0.15</ind>
-				<dep>5</dep>
-			</entry>
-			<entry>
-				<ind>0.45</ind>
-				<dep>35</dep>
-			</entry>
-			<entry>
-				<ind>0.75</ind>
-				<dep>75</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>75</dep>
-			</entry>
-		</interpolation>
-		<axis>
-			<x1-m>4.6323</x1-m>
-			<y1-m>0.175634</y1-m>
-			<z1-m>0.776321</z1-m>
-			<x2-m>4.6323</x2-m>
-			<y2-m>0.488823</y2-m>
-			<z2-m>0.70263</z2-m>
-		</axis>
-	</animation>
-
 	<!-- Left Wing -->
 	<animation>
 		<type>rotate</type>
 		<object-name>wing-outer-port</object-name>
-		<!--	<object-name>flap-outer-port</object-name>
-		<object-name>Port-Light</object-name>-->
+			<!--<object-name>Port-Light</object-name>-->
 		<property>gear/canopy/position-norm</property>
 		<factor>-120</factor>
 		<axis>
@@ -3455,7 +3581,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>wing-outer-stbd</object-name>
-		<!--	 <object-name>Port-Light</object-name>-->
+		
 		<property>gear/canopy/position-norm</property>
 		<factor>120</factor>
 		<axis>
@@ -3532,7 +3658,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>AHook-door-assmbly</object-name>
+		<object-name>AHook-door</object-name>
 		<property>gear/tailhook/position-norm</property>
 		<interpolation>
 			<entry>
@@ -3808,38 +3934,7 @@
 		<object-name>jack-airbrake-lower</object-name>
 	</animation>
 
-<!-- ============== Smoke effects ================== -->
-  <model>
-    <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
-    <name>tyre-smoke-n</name>
-    <offsets>
-      <x-m>-3.97144</x-m>
-      <y-m>0</y-m>
-      <z-m>-1.43238</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
-    <name>tyre-smoke-p</name>
-    <offsets>
-      <x-m>-0.0935892</x-m>
-      <y-m>-1.243720</y-m>
-      <z-m>-1.2934</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
-    <name>tyre-smoke-s</name>
-    <offsets>
-      <x-m>-0.0935892</x-m>
-      <y-m>1.243720</y-m>
-      <z-m>-1.2934</z-m>
-    </offsets>
-  </model>
-
-	<!-- *** LoD for the whole model *** -->
+	<!-- *** LoD for the whole model *** 
 	<animation>
 		<type>range</type>
 		<min-m>0</min-m>
@@ -3851,4 +3946,316 @@
 		<min-m>0</min-m>
 		<max-m>5</max-m>
 	</animation>
+-->
+<!-- EFFECTS -->
+
+
+<!-- Gauche -->
+  <model>
+    <path>Aircraft/SeaVixen/Models/Effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m> 10.5</x-m>
+      <y-m> -0.53 </y-m>
+      <z-m> -0.375 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/SeaVixen/Models/Effects/smoke/smokeR.xml</path>
+    <offsets>
+      <x-m>  10.5</x-m>
+      <y-m>  0.53 </y-m>
+      <z-m> -0.375 </z-m>
+    </offsets>
+  </model>
+
+ 
+  <!-- Gauche -->
+
+
+<!-- Gauche -->
+  <model>
+    <path>Aircraft/SeaVixen/Models/Effects/trail/trailL.xml</path>
+    <offsets>
+     <x-m> 10.5</x-m>
+      <y-m> -0.53 </y-m>
+      <z-m> -0.375 </z-m>
+
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/SeaVixen/Models/Effects/trail/trailR.xml</path>
+    <offsets>
+      <x-m> 10.5</x-m>
+      <y-m> 0.53 </y-m>
+      <z-m> -0.375 </z-m>
+
+    </offsets>
+</model>
+
+
+<!-- Gauche -->
+  <model>
+    <path>Aircraft/SeaVixen/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  10.2</x-m>
+      <y-m> -7.5 </y-m>
+      <z-m> 0.3</z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/SeaVixen/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  10.2</x-m>
+      <y-m>  7.5 </y-m>
+      <z-m> 0.3</z-m>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/SeaVixen/Models/Lights/beacon.xml</path>
+    <offsets>
+      <x-m> 6.55</x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.7</z-m>
+    </offsets>
+  </model>
+
+
+<model>
+    <path>Aircraft/SeaVixen/Models/Lights/beacon.xml</path>
+    <offsets>
+      <x-m> 6.13</x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> -1.0</z-m>
+    </offsets>
+  </model>
+
+
+
+  <model>
+    <path>Aircraft/SeaVixen/Models/Lights/RedLight.xml</path>
+    <offsets>
+      <x-m>  10.3</x-m>
+      <y-m> -7.4 </y-m>
+      <z-m> 0.15</z-m>
+
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/SeaVixen/Models/Lights/GreenLight.xml</path>
+    <offsets>
+      <x-m>  10.3</x-m>
+      <y-m> 7.4 </y-m>
+      <z-m> 0.15</z-m>
+
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/SeaVixen/Models/Lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  10.4</x-m>
+      <y-m> -7.5 </y-m>
+      <z-m> 0.15</z-m>
+
+   </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/SeaVixen/Models/Lights/StrobeWhite.xml</path>
+    <offsets>
+     <x-m>  10.4</x-m>
+      <y-m> 7.5 </y-m>
+      <z-m> 0.15</z-m>
+
+
+    </offsets>
+  </model>
+
+<!-- External loads -->
+<model><path>Aircraft/SeaVixen/Models/weapons/loads.xml</path>
+<offsets>
+      <x-m> 6.2 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0.16 </z-m>
+    </offsets>
+</model> 
+
+<!-- coPilot hatch 
+
+<model><path>Aircraft/SeaVixen/Models/hatch.ac</path>
+<offsets>
+      <x-m> 0</x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+</model> 
+-->
+<!-- exaust -->
+
+<model><path>Aircraft/SeaVixen/Models/exaustinner.ac</path>
+<offsets>
+      <x-m> 0</x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+</model> 
+
+
+<!-- Refueling probe -->
+<model><path>Aircraft/SeaVixen/Models/probe.ac</path>
+<offsets>
+      <x-m> 0</x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+</model> 
+
+<!-- ******************************************************************* -->
+  <!-- FX                                                                  -->
+  <!-- ******************************************************************* -->
+ 	<model>
+		<path>Aircraft/SeaVixen/Models/Effects/fx/fx.xml</path>
+		<offsets>
+			<x-m> 0.00 </x-m>
+			<y-m> 0.00 </y-m>
+			<z-m> 0.28 </z-m>
+		</offsets>
+	</model> 
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/Effects/Vapour/Vapour.xml</path>
+		<offsets>
+			<x-m>6.0</x-m>
+			<y-m>-1.3</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-25</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/Effects/Vapour/Vapour.xml</path>
+		<offsets>
+			<x-m>6.0</x-m>
+			<y-m>1.3</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>25</heading-deg>
+		</offsets>
+	</model>
+ 
+ <model>
+		<path>Aircraft/SeaVixen/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>9.0</x-m>
+			<y-m>-4</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>45</heading-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/Effects/Vapour/Vapour2.xml</path>
+		<offsets>
+			<x-m>9.0</x-m>
+			<y-m>4</y-m>
+			<z-m>0.9</z-m>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+			<heading-deg>-45</heading-deg>
+		</offsets>
+	</model>
+	
+	<!-- aircraft wash modeled in the lines below -->
+  <model>
+    <name>aircraft_wash_l</name>
+    <path>Aircraft/SeaVixen/Models/wash/aircraft_wash.xml</path>
+    <condition>
+    <equals>
+    <property>controls/state/low_level</property>
+    <value>1</value>
+    </equals>
+    </condition>
+    <offsets>
+      <x-m> 25.00 </x-m>
+      <y-m>  4.50 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model>
+    <name>aircraft_wash_r</name>
+    <path>Aircraft/SeaVixen/Models/wash/aircraft_wash.xml</path>
+    <condition>
+      <equals>
+        <property>controls/state/low_level</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <offsets>
+      <x-m> 25.00 </x-m>
+      <y-m> -4.50 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>aircraft_wash_l</object-name>
+    <object-name>aircraft_wash_r</object-name>
+    <property>position/altitude-agl-ft</property>
+    <condition>
+      <equals>
+        <property>controls/state/low_level</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 300 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  1 </z>
+    </axis>
+  </animation>
+
+  <!-- pilot -->
+<model>
+    <path>Aircraft/SeaVixen/Models/pilot/pilot.ac</path>
+    <offsets>
+      <x-m> 7.6 </x-m>
+      <y-m> -0.35 </y-m>
+      <z-m> -0.67 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- pilot invisible from internally -->
+
+    <animation>
+        <type>select</type>
+        <object-name>pilot</object-name>
+    <condition>
+    <not>
+      <property>sim/current-view/internal</property>
+    </not>
+    </condition>
+    </animation>	
+  
+  
 </PropertyList>

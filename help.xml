@@ -3,6 +3,10 @@
 	<help>
 		<title>Sea Vixen FAW2</title>
 		<key>
+			<name>}</name>
+			<desc>Startup/Shut down engines</desc>
+		</key>
+		<key>
 			<name>Ctrl-B</name>
 			<desc>toggle speedbrake</desc>
 		</key>

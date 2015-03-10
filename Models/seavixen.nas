@@ -42,7 +42,6 @@ initialize = func {
 	headshake = HeadShake.new();
 	airbrake = Airbrake.new();
 	flaps = Flaps.new();
-	aircraft.steering.init();
 	#crossfeed = FuelCock.new("crossfeed",
 	#						"controls/fuel/crossfeed",
 	#						0
@@ -426,9 +425,6 @@ HeadShake = {
 
 # Fire it up
 
-	setlistener("/sim/signals/fdm-initialized", func {
-	initialize();
-	}
-);
+settimer(initialize,0);
 
 # end 

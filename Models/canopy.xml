@@ -2,36 +2,10 @@
 <PropertyList>
 	<path>switch.ac</path>
 
-	<!-- **************** switch **************** -->
-	<animation>
-		<type>pick</type>
-		<object-name>Switch</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-toggle</command>
-				<property>/controls/gear/canopy</property>
-			</binding>
-		</action>
-
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-				<label>Canopy: %s</label>
-				<tooltip-id>canopy_open_close</tooltip-id>
-				<mapping>open-close</mapping>
-				<property>/controls/gear/canopy</property>
-			</binding>
-		</hovered>
-
-	</animation>
-
 	<animation>
 		<type>rotate</type>
 		<object-name>Switch</object-name>
-		<property>/controls/gear/canopy</property>
+		<!--<property>controls/lighting/nav-lights</property>-->
 		<interpolation>
 			<entry>
 				<ind>0</ind>

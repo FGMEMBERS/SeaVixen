@@ -20,6 +20,8 @@ tank_4_port 	= nil;
 tank_4_stbd 	= nil;
 pinion_port 	= nil;
 pinion_stbd 	= nil;
+left_wing_Droptank	= nil;
+right_wing_Droptank	= nil;
 
 
 
@@ -58,6 +60,8 @@ init_fuel_system = func {
 	tank_4_stbd 	= Tank.new		( "tank_4_stbd", 11, 0 );
 	pinion_port 	= Tank.new		( "pinion_port", 12, 0 );
 	pinion_stbd 	= Tank.new		( "pinion_stbd", 13, 0 );
+	left_wing_Droptank 	= Tank.new		( "left_wing_Droptank", 14, 0 );
+	right_wing_Droptank 	= Tank.new		( "right_wing_Droptank", 15, 0 );
 
 settimer(fuelTrans,0);
 

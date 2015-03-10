@@ -8,11 +8,8 @@
 ###
 # Initialize internal values
 #
-var total_port = props.globals.getNode("consumables/fuel/total-fuel-port-lbs", 1);
-var total_stbd = props.globals.getNode("consumables/fuel/total-fuel-stbd-lbs", 1);
-
-props.globals.initNode("consumables/fuel/total-fuel-used-lbs");
-props.globals.initNode("consumables/fuel/total-fuel-flow-lbspm");
+total_port = props.globals.getNode("consumables/fuel/total-fuel-port-lbs", 1);
+total_stbd = props.globals.getNode("consumables/fuel/total-fuel-stbd-lbs", 1);
 
 total_port.setDoubleValue(0);
 total_stbd.setDoubleValue(0);
@@ -76,11 +73,9 @@ Switch = {
 		return obj;
 	},
 	update : func {
-		if( me.source.getValue() > 10 and me.input.getValue() != nil){
-#			print("switch update ", me.name, " ", me.input.getValue());
+		if( me.source.getValue() > 10 ){
 			me.output.setDoubleValue( me.input.getValue() );
 		} else {
-#			print("switch update fail ", me.name, " ", me.input.getValue());
 			me.output.setDoubleValue( 0 );
 		}
 	},
@@ -224,11 +219,7 @@ settimer(gearLights, 0.3);
 ###
 # Setup a timer based call to initialize the instruments as
 # soon as possible.
+settimer(init, 0);
 
-setlistener("/sim/signals/fdm-initialized", func {
-	init();
-	gearLights();
-	}
-);
-#
+settimer(gearLights, 0.3);
 

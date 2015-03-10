@@ -1,0 +1,776 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>50</max-m>
+    </animation>
+	
+	
+	<!-- ***************** Cockpit *************************** -->
+	<!-- Front hotspots -->
+	<panel>
+		<path>Aircraft/SeaVixen/Panels/panel-b-hotspots.xml</path>
+		<bottom-left>
+			<x-m>3.0</x-m>
+			<y-m>-0.65</y-m>
+			<z-m>0.30</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>3.0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.30</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>3.0</x-m>
+			<y-m>-0.65</y-m>
+			<z-m> 0.62</z-m>
+		</top-left>
+	</panel>
+
+	<!-- upper panel -->
+	<panel>
+		<path>Aircraft/SeaVixen/Panels/upper-panel-hotspots.xml</path>
+		<bottom-left>
+			<x-m>3.05</x-m>
+			<y-m>-0.57</y-m>
+			<z-m> 0.7</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>3.05</x-m>
+			<y-m>-0.050</y-m>
+			<z-m> 0.7</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>3.05</x-m>
+			<y-m>-0.57</y-m>
+			<z-m> 0.873</z-m>
+		</top-left>
+	</panel>
+
+
+<!-- **************** Instruments ********************* -->
+	<!-- **************** Main Panel ********** -->
+
+	<!-- **************** lamp holders ********** -->
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.071</y-m>
+			<z-m>0.659</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.113</y-m>
+			<z-m>0.612</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.121</y-m>
+			<z-m>0.656</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.044</y-m>
+			<z-m>0.571</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.102</y-m>
+			<z-m>0.561</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.176</y-m>
+			<z-m>0.566</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.055</y-m>
+			<z-m>0.489</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.162</y-m>
+			<z-m>0.609</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.170</y-m>
+			<z-m>0.659</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.102</y-m>
+			<z-m>0.511</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.176</y-m>
+			<z-m>0.504</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.223</y-m>
+			<z-m>0.495</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.243</y-m>
+			<z-m>0.495</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.058</y-m>
+			<z-m>0.623</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.315</y-m>
+			<z-m>0.495</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.315</y-m>
+			<z-m>0.549</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.258</y-m>
+			<z-m>0.563</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.382</y-m>
+			<z-m>0.500</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.375</y-m>
+			<z-m>0.532</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.383</y-m>
+			<z-m>0.564</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.451</y-m>
+			<z-m>0.564</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.426</y-m>
+			<z-m>0.489</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.487</y-m>
+			<z-m>0.494</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.512</y-m>
+			<z-m>0.569</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.470</y-m>
+			<z-m>0.641</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.445</y-m>
+			<z-m>0.635</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.383</y-m>
+			<z-m>0.639</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.03</x-m>
+			<y-m>-0.055</y-m>
+			<z-m>0.489</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/vsi.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.277</y-m>
+			<z-m>0.525</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/standby_AI.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.209</y-m>
+			<z-m>0.534</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/attitude.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.321</y-m>
+			<z-m>0.606</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/hsi.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.224</y-m>
+			<z-m>0.615</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/asi.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.413</y-m>
+			<z-m>0.604</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/altimeter.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.417</y-m>
+			<z-m>0.531</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/mach.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.481</y-m>
+			<z-m>0.604</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/trim.xml</path>
+		<offsets>
+			<x-m>3.025</x-m>
+			<y-m>-0.293</y-m>
+			<z-m>0.465</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/flaps.xml</path>
+		<offsets>
+			<x-m>3.025</x-m>
+			<y-m>-0.244</y-m>
+			<z-m>0.465</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/aoa.xml</path>
+		<offsets>
+			<x-m>3.025</x-m>
+			<y-m>-0.346</y-m>
+			<z-m>0.518</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/turn.xml</path>
+		<name>Turn</name>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.349</y-m>
+			<z-m>0.546</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/rpm-1.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.130</y-m>
+			<z-m>0.589</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/rpm-2.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.078</y-m>
+			<z-m>0.588</z-m>
+		</offsets>
+	</model>
+
+	<!--<model>
+		<path>Aircraft/Hunter/Models/dme.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.185</y-m>
+			<z-m>0.50</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/dimmer.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.09</y-m>
+			<z-m>0.30</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/Hunter/Models/nav-light-switch.xml</path>
+		<offsets>
+			<x-m>-4.83</x-m>
+			<y-m>0.15</y-m>
+			<z-m>0.30</z-m>
+		</offsets>
+
+	</model>-->
+
+	<!-- **************** Right Panel *********** -->
+	<model>
+		<path>Aircraft/SeaVixen/Models/dolls-eye-inverter-fail.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.0464</y-m>
+			<z-m>0.6055</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/jpt-1.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.141</y-m>
+			<z-m>0.634</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/jpt-2.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.090</y-m>
+			<z-m>0.634</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/adf.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.185</y-m>
+			<z-m>0.463</z-m>
+		</offsets>
+	</model>
+
+	<!-- **************** Left Top. Panel *********** -->
+	
+	<!-- **************** lamp holders ********** -->
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.06</x-m>
+			<y-m>-0.300</y-m>
+			<z-m>0.690</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/lamp-holder.xml</path>
+		<offsets>
+			<x-m>3.06</x-m>
+			<y-m>-0.400</y-m>
+			<z-m>0.720</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/dolls-eye-mg-hyd-pump.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.527</y-m>
+			<z-m>0.755</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/dolls-eye-fuel-filter.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.2979</y-m>
+			<z-m>0.7098</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/canopy.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.563</y-m>
+			<z-m>0.72</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/refuel.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.402</y-m>
+			<z-m>0.6822</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/canopy-emerg-release.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.534</y-m>
+			<z-m>0.699</z-m>
+			<roll-deg>-45</roll-deg>
+		</offsets>
+	</model>
+
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-filter-de-ice-hydraulic.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.2741</y-m>
+			<z-m>0.6980</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-filter-de-ice-methanol.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.2465</y-m>
+			<z-m>0.6980</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-aar.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.4464</y-m>
+			<z-m>0.6825</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-5.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3781</y-m>
+			<z-m>0.7131</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-6.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3753</y-m>
+			<z-m>0.6843</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-3.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3511</y-m>
+			<z-m>0.7131</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-4.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3483</y-m>
+			<z-m>0.6843</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-1.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3241</y-m>
+			<z-m>0.7131</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/magnetic-indicator-2.xml</path>
+		<offsets>
+			<x-m>3.0525</x-m>
+			<y-m>-0.3213</y-m>
+			<z-m>0.6843</z-m>
+		</offsets>
+	</model>
+
+	<!-- **************** Right Top Panel***************** -->
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/warning-lamp-alt.xml</path>
+		<offsets>
+			<x-m>3.0455</x-m>
+			<y-m>-0.200</y-m>
+			<z-m>0.87</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/autopilot-control.xml</path>
+		<name>Autopilot Control</name>
+		<offsets>
+			<x-m>3.05</x-m>
+			<y-m>-0.310</y-m>
+			<z-m>0.717</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/gmeter.xml</path>
+		<offsets>
+			<x-m>3.07</x-m>
+			<y-m>-0.150</y-m>
+			<z-m>0.817</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/aircraft-trim.xml</path>
+		<offsets>
+			<x-m>3.07</x-m>
+			<y-m>-0.112</y-m>
+			<z-m>0.75</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/aoa-indexer.xml</path>
+		<offsets>
+			<x-m>3.140</x-m>
+			<y-m>-0.59</y-m>
+			<z-m> 0.828</z-m>
+		</offsets>
+	</model>
+
+	<!-- ************* Right Lower Side Panel ******* -->
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-left.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.141</y-m>
+			<z-m>0.533</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-right.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.064</y-m>
+			<z-m>0.533</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/fuel-flow.xml</path>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.117</y-m>
+			<z-m>0.470</z-m>
+		</offsets>
+	</model>
+
+	<!-- Gear Indicator Panel-->
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/gear.xml</path>
+		<name>Gear-Indicator</name>
+		<offsets>
+			<x-m>3.02</x-m>
+			<y-m>-0.63</y-m>
+			<z-m>0.535</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/ggs.xml</path>
+		<name>Gunsight</name>
+		<offsets>
+			<x-m>3.05</x-m>
+			<y-m>-0.32</y-m>
+			<z-m>0.760</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/ejection-seat.xml</path>
+		<name>Pilot Seat</name>
+		<offsets>
+			<x-m>3.72</x-m>
+			<y-m>-0.33</y-m>
+			<z-m>-0.08</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<path>Aircraft/SeaVixen/Models/ejection-seat.xml</path>
+		<name>Observer Seat</name>
+		<offsets>
+			<x-m>4.160</x-m>
+			<y-m>0.388</y-m>
+			<z-m>-0.701</z-m>
+		</offsets>
+	</model>
+
+ 
+	
+	<model>
+		<path>Aircraft/SeaVixen/Models/strop.xml</path>
+		<name>New-Strop</name>
+		<offsets>
+			<x-m>6.154</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.490</z-m>
+		</offsets>
+	</model>
+
+	<!-- ***** Navigation Lights ****** -->
+
+</PropertyList>
+
+

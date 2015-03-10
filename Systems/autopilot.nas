@@ -21,10 +21,6 @@ var time = 0;
 var dt = 0;
 var last_time = 0.0;
 
-props.globals.initNode("instrumentation/master-reference-gyro/indicated-roll-deg", 0);
-props.globals.initNode("instrumentation/master-reference-gyro/indicated-pitch-deg", 0);
-props.globals.initNode("autopilot/settings/heading-bug-deg", 0);
-
 ##
 # Initialize the autopilot system
 #
@@ -32,7 +28,7 @@ props.globals.initNode("autopilot/settings/heading-bug-deg", 0);
 init_autopilot = func {
 	print("Initializing Sea Vixen Autopilot ...");
 
-########
+###
 # Autostab channel ("name", "lock property", "output property"
 #					"control property", initial switch position, )
 ###
@@ -48,8 +44,7 @@ init_autopilot = func {
 					"autopilot/internal/elevon-stab",
 					"controls/switches/auto-stabs/pitch_channel",
 					1);
-
-########
+###
 # Autopilot channel ("name", 
 #					"hold-name", "hold-name", "hold-name",
 #					"target property", 
@@ -60,7 +55,7 @@ init_autopilot = func {
 ###	
 	heading = APChannel.new("heading",
 					"true-heading-hold",,,
-					"autopilot/settings/heading-bug-deg",,,
+					"autopilot/settings/target-heading-deg",,,
 					"autopilot/locks/heading",
 					"autopilot/internal/rudder-trim",
 					"controls/switches/autopilot/heading_channel",
@@ -102,7 +97,7 @@ init_autopilot = func {
 						func { autoOff.set_switch(); } );
 	
 # Request that the update fuction be called 
-	settimer(update_autopilot, 0.0 );
+	settimer(update_autopilot, 0.3 );
 	
 	print ("Running Sea Vixen Autopilot");
 				
@@ -126,10 +121,10 @@ tailplaneGearChange.update();
 
 #keep the target values up-to-date when not in use		
 if ( !heading.status_node.getValue() ){ 
-#	heading.heading_follower();
+	heading.heading_follower();
 	height.height_follower();
 	}
-
+		
 # Request that the update fuction be called again next frame
 	settimer(update_autopilot, 0);
 	
@@ -240,8 +235,8 @@ APChannel = {
 					and height.get_switch() ) {
 			heading.lock.setValue("true-heading-hold");
 			heading.target.setValue( me.heading_node.getValue() );
-			print ( "target heading ", heading.target.getValue()) ;
-			print ( "height switch ", height.get_switch()) ;
+			print ( "heading " , me.heading_node.getValue()) ;
+			print ( "height " , height.get_switch()) ;
 			if (height.get_switch() == 1) {
 				height.lock.setValue( "speed-with-pitch-trim" );
 				height.target.setValue( me.speed_node.getValue() );
@@ -342,6 +337,7 @@ AutoStabsG = {
 		var g = me.pilot_g_node.getValue();
 		var pitch_switch = pitch.get_switch();
 		var yaw_switch = yaw.get_switch();
+		var heading_switch = heading.get_switch();
 		var heading_switch = heading.get_switch();
 	
 		if (pitch_switch) {
@@ -449,7 +445,7 @@ AutoOff = {
 		
 		if (autoThrottle.get_switch()) {
 			autoThrottle.set_lock("");
-#			print ("set auto-throttle - OFF");
+			print ("here");
 		}
 	},
 	update : func () {

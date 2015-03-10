@@ -6,31 +6,6 @@
 
 	<path>autopilot-control.ac</path>
 
-	<!-- **************** switch **************** -->
-	<animation>
-		<type>pick</type>
-		<object-name>switch-rudder</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-toggle</command>
-				<property>/controls/switches/auto-stabs/yaw_channel</property>
-			</binding>
-		</action>
-
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-				<label>Auto Stab Rudder: %s</label>
-				<tooltip-id>auto_stab_rudder</tooltip-id>
-				<mapping>on-off</mapping>
-				<property>/controls/switches/auto-stabs/yaw_channel</property>
-			</binding>
-		</hovered>
-	</animation>
-
 	<animation>
 		<type>rotate</type>
 		<object-name>switch-rudder</object-name>
@@ -55,30 +30,6 @@
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-	</animation>
-
-	<animation>
-		<type>pick</type>
-		<object-name>switch-elevons</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-toggle</command>
-				<property>controls/switches/auto-stabs/pitch_channel</property>
-			</binding>
-		</action>
-
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-				<label>Auto Stab Elevons: %s</label>
-				<tooltip-id>auto_stab_elevons</tooltip-id>
-				<mapping>on-off</mapping>
-				<property>controls/switches/auto-stabs/pitch_channel</property>
-			</binding>
-		</hovered>
 	</animation>
 
 	<animation>
@@ -107,29 +58,26 @@
 		</axis>
 	</animation>
 
-	<animation>
-		<type>pick</type>
-		<object-name>knob-push-on</object-name>
-		<visible>true</visible>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/switches/autopilot/heading_channel</property>
-				<value>1</value>
-			</binding>
-		</action>
 
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-				<label>Heading: %s</label>
-				<tooltip-id>heading_push_on</tooltip-id>
-				<mapping>on-off</mapping>
-				<property>controls/switches/autopilot/heading_channel</property>
-			</binding>
-		</hovered>
+	<animation>
+		<type>translate</type>
+		<object-name>white-disk</object-name>
+		<property>autopilot/settings/status</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0.001</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 	</animation>
 
 	<animation>
@@ -148,27 +96,6 @@
 		</interpolation>
 		<axis>
 			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>white-disk</object-name>
-		<property>autopilot/settings/status</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>0.001</dep>
-			</entry>
-		</interpolation>
-		<axis>
-			<x>1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>

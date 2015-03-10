@@ -45,7 +45,7 @@
 			<actions>
 				<!-- ************** hsi hotspots ************** -->
 				<!-- left knob heading-bug -->
-				<!--<action>
+				<action>
 					<name>ccw-fine</name>
 					<button>0</button>
 					<x>140</x>
@@ -54,7 +54,7 @@
 					<h>60</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>autopilot/settings/heading-bug-deg</property>
+						<property>instrumentation/heading-indicator/heading-bug-deg/</property>
 						<step>-1</step>
 						<min>0</min>
 						<max>360</max>
@@ -70,7 +70,7 @@
 					<h>60</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>autopilot/settings/heading-bug-deg</property>
+						<property>instrumentation/heading-indicator/heading-bug-deg</property>
 						<step>-10</step>
 						<min>0</min>
 						<max>360</max>
@@ -86,7 +86,7 @@
 					<h>60</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>autopilot/settings/heading-bug-deg</property>
+						<property>instrumentation/heading-indicator/heading-bug-deg/</property>
 						<step>1</step>
 						<min>0</min>
 						<max>360</max>
@@ -102,13 +102,13 @@
 					<h>60</h>
 					<binding>
 						<command>property-adjust</command>
-						<property>autopilot/settings/heading-bug-deg</property>
+						<property>instrumentation/heading-indicator/heading-bug-deg/</property>
 						<step>10</step>
 						<min>0</min>
 						<max>360</max>
 						<wrap>1</wrap>
 					</binding>
-				</action>-->
+				</action>
 				<!-- middle button source select -->
 				<action>
 					<name>source select</name>
@@ -119,7 +119,7 @@
 					<h>60</h>
 					<binding>
 						<command>property-toggle</command>
-						<property>instrumentation/heading-indicator/heading-source</property>
+						<property>instrumentation/heading-indicator/heading-source/</property>
 					</binding>
 				</action>
 				<!-- ************** altimeter hotspots ************** -->

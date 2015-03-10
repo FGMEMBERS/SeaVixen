@@ -23,26 +23,26 @@
     <output>/autopilot/internal/hdg-rate-degps-filtered</output>
     <filter-time>0.2</filter-time>
   </filter>
-
-  <predict-simple>
-    <name>Mach predictor-10</name>
-    <debug>false</debug>
-    <input>velocities/mach</input>
-    <seconds>10</seconds>
-    <filter-gain>0</filter-gain>
-    <output>autopilot/internal/lookahead-10-sec-mach</output>
-  </predict-simple>
-
-  <predict-simple>
-    <name>Mach predictor-5</name>
-    <debug>false</debug>
-    <input>velocities/mach</input>
-    <seconds>5</seconds>
-    <filter-gain>0</filter-gain>
-    <output>autopilot/internal/lookahead-5-sec-mach</output>
-  </predict-simple>
-
-
+  
+	<predict-simple>
+		<name>Mach predictor-10</name>
+		<debug>false</debug>
+		<input>velocities/mach</input>
+		<seconds>10</seconds>
+		<filter-gain>0</filter-gain>
+		<output>autopilot/internal/lookahead-10-sec-mach</output>
+	</predict-simple>
+	
+	<predict-simple>
+		<name>Mach predictor-5</name>
+		<debug>false</debug>
+		<input>velocities/mach</input>
+		<seconds>5</seconds>
+		<filter-gain>0</filter-gain>
+		<output>autopilot/internal/lookahead-5-sec-mach</output>
+	</predict-simple>
+ 
+ 
   <pid-controller>
     <name>Yaw Damper (Master Reference Gyro based)</name>
     <debug>false</debug>
@@ -60,7 +60,7 @@
       <prop>autopilot/internal/rudder-stab</prop>
     </output>
     <config>
-      <Kp>0.25</Kp>
+      <Kp>0.10</Kp>
       <beta>-1</beta>
       <alpha>0.1</alpha>
       <gamma>0.0</gamma>
@@ -70,16 +70,16 @@
       <u_max>0.75</u_max>
     </config>
   </pid-controller>
-
+  
   <!-- Pitch Damper -->
 
   <filter>
     <name>Pitch Hold filter</name>
     <debug>false</debug>
-      <type>noise-spike</type>
-    <max-rate-of-change>1.0</max-rate-of-change>
-    <input>/instrumentation/master-reference-gyro/indicated-pitch-deg</input>
+    <type>double-exponential</type>
+    <input>instrumentation/master-reference-gyro/indicated-pitch-deg</input>
     <output>/autopilot/internal/pitch-filtered</output>
+    <filter-time>1.0</filter-time>
   </filter>
 
   <pid-controller>
@@ -90,36 +90,27 @@
       <value>pitch-stab</value>
     </enable>
     <input>
-      <prop>autopilot/internal/pitch-filtered</prop>
-      <!--<prop>instrumentation/master-reference-gyro/indicated-pitch-deg</prop>-->
+	  <prop>instrumentation/master-reference-gyro/indicated-pitch-deg</prop>
     </input>
     <reference>
-      <value>0.0</value>
+	<prop>autopilot/internal/pitch-filtered</prop>
     </reference>
     <output>
       <prop>autopilot/internal/elevon-stab</prop>
     </output>
     <config>
-      <Kp>0.10</Kp>
-      <!-- proportional gain -->
-      <beta>-0.5</beta>
-      <!-- input value weighing factor -->
-      <alpha>0.1</alpha>
-      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>
-      <!-- input value weighing factor for -->
-      <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>
-      <!-- integrator time -->
-      <Td>0.00001</Td>
-      <!-- derivator time -->
-      <u_min>-0.5</u_min>
-      <!-- minimum output clamp -->
-      <u_max>0.5</u_max>
-      <!-- maximum output clamp -->
+      <Kp>0.10</Kp>             <!-- proportional gain -->
+      <beta>-0.5</beta>         <!-- input value weighing factor -->
+      <alpha>0.1</alpha>        <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>        <!-- input value weighing factor for -->
+                                <!-- unfiltered derivative error -->
+      <Ti>1.0</Ti>              <!-- integrator time -->
+      <Td>0.00001</Td>          <!-- derivator time -->
+      <u_min>-0.4</u_min>       <!-- minimum output clamp -->
+      <u_max>0.4</u_max>        <!-- maximum output clamp -->
     </config>
   </pid-controller>
-
+  
   <!-- =============================================================== -->
   <!-- Autopilot Modes                                                 -->
   <!-- =============================================================== -->
@@ -145,7 +136,7 @@
       <value>true-heading-hold</value>
     </enable>
     <input>
-      <prop>instrumentation/master-reference-gyro/heading-bug-error-deg</prop>
+      <prop>autopilot/internal/hdg-error-filtered</prop>
     </input>
     <reference>
       <value>0.0</value>
@@ -154,15 +145,15 @@
       <prop>/autopilot/settings/target-roll-deg</prop>
     </output>
     <config>
-      <Kp>-1.0</Kp>           <!-- proportional gain -->
-      <beta>1</beta>          <!-- input value weighing factor -->
-      <alpha>0.1</alpha>      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>      <!-- input value weighing factor for -->
-                              <!-- unfiltered derivative error -->
-      <Ti>10.0</Ti>           <!-- integrator time -->
-      <Td>0.00001</Td>        <!-- derivator time -->
-      <u_min>-20.0</u_min>    <!-- minimum output clamp -->
-      <u_max>20.0</u_max>     <!-- maximum output clamp -->
+      <Kp>-1.0</Kp>         <!-- proportional gain -->
+      <beta>1</beta>     	<!-- input value weighing factor -->
+      <alpha>0.1</alpha>    <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>    <!-- input value weighing factor for -->
+                            <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>         <!-- integrator time -->
+      <Td>0.00001</Td>      <!-- derivator time -->
+      <u_min>-20.0</u_min>  <!-- minimum output clamp -->
+      <u_max>20.0</u_max>   <!-- maximum output clamp -->
     </config>
   </pid-controller>
 
@@ -184,18 +175,19 @@
       <prop>autopilot/internal/rudder-trim</prop>
     </output>
     <config>
-      <Kp>0.01</Kp>           <!-- proportional gain -->
-      <beta>1</beta>          <!-- input value weighing factor -->
-      <alpha>0.1</alpha>      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>      <!-- input value weighing factor for -->
-                              <!-- unfiltered derivative error -->
-      <Ti>10.0</Ti>           <!-- integrator time -->
-      <Td>0.00001</Td>        <!-- derivator time -->
-      <u_min>-1.0</u_min>     <!-- minimum output clamp -->
-      <u_max>1.0</u_max>      <!-- maximum output clamp -->
+      <Kp>0.01</Kp>          <!-- proportional gain -->
+      <beta>1</beta>      <!-- input value weighing factor -->
+      <alpha>0.1</alpha>    <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>    <!-- input value weighing factor for -->
+                            <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>         <!-- integrator time -->
+      <Td>0.00001</Td>      <!-- derivator time -->
+      <u_min>-1.0</u_min>   <!-- minimum output clamp -->
+      <u_max>1.0</u_max>    <!-- maximum output clamp -->
     </config>
   </pid-controller>
 
+  
   <!-- Altitude hold.  2 stage cascade controller. -->
 
   <!-- Stage #1 sets target rate of climb based on diff between current alt -->
@@ -217,10 +209,10 @@
       <prop>autopilot/settings/target-climb-rate-fps</prop>
     </output>
     <config>
-      <Kp>0.3</Kp>      <!-- proportional gain -->
-      <Ki>0</Ki>      <!-- integral gain -->
-      <u_min>-16.67</u_min>      <!-- minimum output clamp -->
-      <u_max>8.33</u_max>      <!-- maximum output clamp -->
+      	<Kp>0.3</Kp>      		<!-- proportional gain -->
+		<Ki>0</Ki>      		<!-- integral gain -->
+      	<u_min>-16.67</u_min> 	<!-- minimum output clamp -->
+      	<u_max>8.33</u_max>		<!-- maximum output clamp -->
     </config>
   </pi-simple-controller>
 
@@ -243,8 +235,8 @@
     </output>
     <config>
       <Kp>0.001</Kp>          <!-- proportional gain -->
-      <beta>1</beta>          <!-- input value weighing factor -->
-      <alpha>0.01</alpha>     <!-- low pass filter weighing factor -->
+      <beta>1</beta>        <!-- input value weighing factor -->
+      <alpha>0.01</alpha>      <!-- low pass filter weighing factor -->
       <gamma>0.0</gamma>      <!-- input value weighing factor for -->
                               <!-- unfiltered derivative error -->
       <Ti>10.0</Ti>           <!-- integrator time -->
@@ -254,7 +246,7 @@
     </config>
   </pid-controller>
 
-  <!-- Auto throttle -->
+   <!-- Auto throttle -->
   <pid-controller>
     <name>Auto Throttle (5 sec lookahead)</name>
     <debug>false</debug>
@@ -263,12 +255,12 @@
       <value>autothrottle</value>
     </enable>
     <input>
-      <prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop>
-      <!--      <prop>/velocities/airspeed-kt</prop>-->
-    </input>
+       <prop>/autopilot/internal/lookahead-5-sec-airspeed-kt</prop> 
+<!--      <prop>/velocities/airspeed-kt</prop>
+-->    </input>
     <reference>
-      <!--<prop>autopilot/settings/target-auto-throttle-speed-kt</prop>-->
-      	  <value>128.0</value>
+      <prop>autopilot/settings/target-auto-throttle-speed-kt</prop>
+<!--	  <value>129.0</value>-->
     </reference>
     <output>
       <prop>controls/engines/engine[0]/auto-throttle</prop>
@@ -282,12 +274,12 @@
       <Ti>10.0</Ti>           <!-- integrator time -->
       <Td>0.00001</Td>        <!-- derivator time -->
       <u_min>0.0</u_min>      <!-- minimum output clamp -->
-      <u_max>0.5</u_max>      <!-- maximum output clamp -->
+      <u_max>1.0</u_max>      <!-- maximum output clamp -->
     </config>
   </pid-controller>
 
   <!-- Hold speed by varying pitch trim (Two stage cascading controller) -->
-
+  
   <pid-controller>
     <name>Speed hold (vary pitch trim) Stage #1</name>
     <debug>false</debug>
@@ -305,15 +297,15 @@
       <prop>/autopilot/settings/target-pitch-deg</prop>
     </output>
     <config>
-      <Kp>-0.15</Kp>          <!-- proportional gain -->
-      <beta>0.01</beta>       <!-- input value weighing factor -->
-      <alpha>0.1</alpha>      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>      <!-- input value weighing factor for -->
-                              <!-- unfiltered derivative error -->
-      <Ti>10</Ti>             <!-- integrator time -->
-      <Td>0.00001</Td>        <!-- derivator time -->
-      <u_min>-15</u_min>      <!-- minimum output clamp -->
-      <u_max>15</u_max>       <!-- maximum output clamp -->
+      <Kp>-0.15</Kp>              	<!-- proportional gain -->
+      <beta>0.01</beta>           	<!-- input value weighing factor -->
+      <alpha>0.1</alpha>         	<!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>          	<!-- input value weighing factor for -->
+                                	<!-- unfiltered derivative error -->
+      <Ti>10</Ti>              		<!-- integrator time -->
+      <Td>0.00001</Td>          	<!-- derivator time -->
+      <u_min>-15</u_min>      		<!-- minimum output clamp -->
+      <u_max>15</u_max>      		<!-- maximum output clamp -->
     </config>
   </pid-controller>
 
@@ -325,7 +317,7 @@
       <value>speed-with-pitch-trim</value>
     </enable>
     <input>
-      <prop>instrumentation/master-reference-gyro/indicated-pitch-deg</prop>
+      <prop>/orientation/pitch-deg</prop>
     </input>
     <reference>
       <prop>/autopilot/settings/target-pitch-deg</prop>
@@ -334,20 +326,20 @@
       <prop>autopilot/internal/elevon-trim</prop>
     </output>
     <config>
-      <Kp>0.15</Kp>           <!-- proportional gain -->
-      <beta>0.001</beta>      <!-- input value weighing factor -->
-      <alpha>0.1</alpha>      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>      <!-- input value weighing factor for -->
-                              <!-- unfiltered derivative error -->
-      <Ti>1</Ti>              <!-- integrator time -->
-      <Td>0.00001</Td>        <!-- derivator time -->
-      <u_min>-1.6</u_min>     <!-- minimum output clamp -->
-      <u_max>1.6</u_max>      <!-- maximum output clamp -->
+      <Kp>0.15</Kp>        	<!-- proportional gain -->
+      <beta>0.001</beta>	<!-- input value weighing factor -->
+      <alpha>0.1</alpha>    <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>    <!-- input value weighing factor for -->
+                            <!-- unfiltered derivative error -->
+      <Ti>1</Ti>          <!-- integrator time -->
+      <Td>0.00001</Td>      <!-- derivator time -->
+      <u_min>-1.6</u_min>   <!-- minimum output clamp -->
+      <u_max>1.6</u_max>    <!-- maximum output clamp -->
     </config>
   </pid-controller>
-
-  <!-- Hold mach by varying pitch trim (Two stage cascading controller) -->
-
+  
+<!-- Hold mach by varying pitch trim (Two stage cascading controller) -->
+  
   <pid-controller>
     <name>Mach hold (vary pitch trim) Stage #1</name>
     <debug>false</debug>
@@ -365,15 +357,15 @@
       <prop>/autopilot/settings/target-pitch-deg</prop>
     </output>
     <config>
-      <Kp>-1.0</Kp>           <!-- proportional gain -->
-      <beta>10</beta>         <!-- input value weighing factor -->
-      <alpha>0.1</alpha>      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>      <!-- input value weighing factor for -->
-                              <!-- unfiltered derivative error -->
-      <Ti>10</Ti>             <!-- integrator time -->
-      <Td>0.00001</Td>        <!-- derivator time -->
-      <u_min>-15</u_min>      <!-- minimum output clamp -->
-      <u_max>15</u_max>       <!-- maximum output clamp -->
+      <Kp>-1.0</Kp>              	<!-- proportional gain -->
+      <beta>10</beta>          <!-- input value weighing factor -->
+      <alpha>0.1</alpha>       	<!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>       	<!-- input value weighing factor for -->
+                               	<!-- unfiltered derivative error -->
+      <Ti>10</Ti>              	<!-- integrator time -->
+      <Td>0.00001</Td>         	<!-- derivator time -->
+      <u_min>-15</u_min>      	<!-- minimum output clamp -->
+      <u_max>15</u_max>      	<!-- maximum output clamp -->
     </config>
   </pid-controller>
 
@@ -385,7 +377,7 @@
       <value>mach-with-pitch-trim</value>
     </enable>
     <input>
-      <prop>instrumentation/master-reference-gyro/indicated-pitch-deg</prop>
+      <prop>/orientation/pitch-deg</prop>
     </input>
     <reference>
       <prop>/autopilot/settings/target-pitch-deg</prop>
@@ -393,17 +385,18 @@
     <output>
       <prop>autopilot/internal/elevon-trim</prop>
     </output>
-    <config>
-      <Kp>0.2</Kp>            <!-- proportional gain -->
-      <beta>1</beta>          <!-- input value weighing factor -->
-      <alpha>0.1</alpha>      <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>      <!-- input value weighing factor for -->
-                              <!-- unfiltered derivative error -->
-      <Ti>1</Ti>              <!-- integrator time -->
-      <Td>0.00001</Td>        <!-- derivator time -->
-      <u_min>-1.6</u_min>     <!-- minimum output clamp -->
-      <u_max>1.6</u_max>      <!-- maximum output clamp -->
+     <config>
+      <Kp>0.2</Kp>        	<!-- proportional gain -->
+      <beta>1</beta>	<!-- input value weighing factor -->
+      <alpha>0.1</alpha>    <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>    <!-- input value weighing factor for -->
+                            <!-- unfiltered derivative error -->
+      <Ti>1</Ti>          <!-- integrator time -->
+      <Td>0.00001</Td>      <!-- derivator time -->
+      <u_min>-1.6</u_min>   <!-- minimum output clamp -->
+      <u_max>1.6</u_max>    <!-- maximum output clamp -->
     </config>
   </pid-controller>
+
 
 </PropertyList>

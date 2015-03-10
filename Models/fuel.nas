@@ -33,7 +33,7 @@ initDoubleProp = func {
 
 # ============================= Replace existing function ================================
 
-fuel.update = func{};
+fuel.fuelUpdate = func{};
 
 
 # =================================== Fuel Update ========================================
@@ -301,7 +301,6 @@ Sidedfeed = {
 
 # Fire it up
 
-#settimer(initialize,0);
-setlistener("sim/signals/fdm-initialized", initialize);
+settimer(initialize,0);
 
 # end

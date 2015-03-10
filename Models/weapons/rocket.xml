@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>Aircraft/SeaVixen/Models/weapons/rocket-pack.ac</path>
+
+  <animation>
+    <object-name>rocket-pack</object-name>
+  </animation>
+
+</PropertyList>

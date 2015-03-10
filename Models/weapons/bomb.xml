@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <path>bomb.ac</path>
+
+  <animation>
+    <object-name>bomb</object-name>
+  </animation>
+
+</PropertyList>
