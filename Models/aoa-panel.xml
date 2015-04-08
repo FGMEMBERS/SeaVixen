@@ -8,7 +8,7 @@
 	<w>2</w>
 	<h>5</h>
 	<instruments>
-		<instrument include="/../../Instruments/aoa-indexer.xml">
+		<instrument include="Aircraft/Instruments/aoa-indexer.xml">
 			<name>AoA</name>
 			<x>-2</x>
 			<y>2</y>
