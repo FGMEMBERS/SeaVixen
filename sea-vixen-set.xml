@@ -18,6 +18,17 @@ raise/lower, emergency flap lowering, and 2 flap steps.
     <author type="string">Vivian Meazza</author>
     <description type="string">de Havilland SeaVixen FAW2 (YASim)</description>
     <status type="string">beta</status>
+    <tags>
+	<tag>fighter</tag>
+	<tag>1950s</tag>
+	<tag>1960s</tag>	
+	<tag>1970s</tag>
+	<tag>retractable-gear</tag>
+	<tag>tail-hook</tag>
+	<tag>t-tail</tag>
+	<tag>jet</tag>
+	<tag>twin-engine</tag>
+    </tags>
     <virtual-cockpit archive="y">true</virtual-cockpit>
     <flight-model>yasim</flight-model>
     <aero>seavixen-yasim</aero>
